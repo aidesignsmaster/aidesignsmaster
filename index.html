@@ -39,7 +39,7 @@
     <header>
         <h1>🖼️ AI Designs Master Gallery</h1>
         <div class="search-container">
-            <input type="text" id="searchBar" class="search-bar" placeholder="Search wallpaper number (e.g. 1, 2, 100)..." onkeyup="filterImages()">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search wallpaper number..." onkeyup="filterImages()">
         </div>
     </header>
 
@@ -56,18 +56,16 @@
     </div>
 
     <script>
-        // GitHub Storage Base URL
-        const IMAGE_BASE_URL = "https://jsdelivr.net";
+        // 🔗 Aapka Real Image Storage URL
+        const IMAGE_BASE_URL = "https://github.io";
 
-        // 🚀 AUTOMATIC SETUP: Aapke paas abhi jitni total images hain, woh number yahan likhein.
-        // Baad mein jab aap 1000 images upload kar denge, toh bas is 311 ko badal kar 1000 kar dena!
-        const TOTAL_IMAGES = 311; 
-
-        // Yeh loop apne aap saari images ki list bana dega (1.webp, 2.webp... se lekar 311.webp tak)
-        const imageList = [];
-        for (let i = 1; i <= TOTAL_IMAGES; i++) {
-            imageList.push(i.toString());
-        }
+        // 🚀 Aapki saari random images ke sahi numbers ki list
+        const imageList = [
+            "4230", "4231", "4232", "4233", "4234", "4258", "4259", "4240", "4241", "4242", 
+            "4243", "4249", "4257", "4290", "4493", "4520", "4592", "4597", "4601", "4604", 
+            "4619", "4620", "4637", "4641", "4723", "4729", "4732", "4734", "4736", "4738", 
+            "4741", "4892", "4893", "4894", "4896", "4908"
+        ];
 
         const galleryGrid = document.getElementById('galleryGrid');
         const modal = document.getElementById('imageModal');
