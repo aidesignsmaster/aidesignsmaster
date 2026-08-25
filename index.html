@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Designs Master Gallery</title>
+    <style>
+        /* Premium Dark Theme Styling */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; padding: 20px; }
+        header { text-align: center; margin-bottom: 30px; }
+        h1 { font-size: 2rem; margin-bottom: 15px; color: #38bdf8; }
+
+        /* Search Bar */
+        .search-container { max-width: 500px; margin: 0 auto 30px; display: flex; gap: 10px; }
+        .search-bar { width: 100%; padding: 12px 20px; border-radius: 25px; border: 2px solid #334155; background-color: #1e293b; color: white; font-size: 1rem; outline: none; }
+        .search-bar:focus { border-color: #38bdf8; }
+
+        /* Responsive Gallery Grid */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto; }
+        .card { background-color: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s; cursor: pointer; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+        .card-info { padding: 10px; text-align: center; }
+        .card-title { font-size: 0.9rem; color: #e2e8f0; }
+
+        /* Lightbox Modal */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.95); z-index: 1000; justify-content: center; align-items: center; flex-direction: column; padding: 20px; }
+        .modal.active { display: flex; }
+        .modal-img { max-width: 90%; max-height: 70vh; border-radius: 8px; margin-bottom: 20px; }
+        .btn-container { display: flex; gap: 15px; }
+        .btn { padding: 12px 30px; border-radius: 25px; font-weight: bold; text-decoration: none; cursor: pointer; font-size: 1rem; border: none; }
+        .btn-download { background-color: #38bdf8; color: #0f172a; }
+        .btn-close { background-color: #334155; color: white; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🖼️ AI Designs Master Gallery</h1>
+        <div class="search-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search wallpaper number (e.g. 1, 2, 100)..." onkeyup="filterImages()">
+        </div>
+    </header>
+
+    <!-- Images Grid -->
+    <main class="gallery-grid" id="galleryGrid"></main>
+
+    <!-- Modal Box -->
+    <div class="modal" id="imageModal">
+        <img src="" alt="Preview" class="modal-img" id="modalImg">
+        <div class="btn-container">
+            <a href="#" target="_blank" class="btn btn-download" id="downloadBtn">Download HD</a>
+            <button class="btn btn-close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // GitHub Storage Base URL
+        const IMAGE_BASE_URL = "https://jsdelivr.net";
+
+        // 🚀 AUTOMATIC SETUP: Aapke paas abhi jitni total images hain, woh number yahan likhein.
+        // Baad mein jab aap 1000 images upload kar denge, toh bas is 311 ko badal kar 1000 kar dena!
+        const TOTAL_IMAGES = 311; 
+
+        // Yeh loop apne aap saari images ki list bana dega (1.webp, 2.webp... se lekar 311.webp tak)
+        const imageList = [];
+        for (let i = 1; i <= TOTAL_IMAGES; i++) {
+            imageList.push(i.toString());
+        }
+
+        const galleryGrid = document.getElementById('galleryGrid');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        // Gallery Load Function
+        function loadGallery(items) {
+            galleryGrid.innerHTML = "";
+            if(items.length === 0) {
+                galleryGrid.innerHTML = `<p style="grid-column: 1/-1; text-align:center; color:#94a3b8;">No wallpaper found!</p>`;
+                return;
+            }
+            items.forEach(num => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.onclick = () => openModal(num);
+                card.innerHTML = `
+                    <img src="${IMAGE_BASE_URL}${num}.webp" alt="Wallpaper ${num}" loading="lazy">
+                    <div class="card-info"><p class="card-title">Wallpaper ${num}</p></div>
+                `;
+                galleryGrid.appendChild(card);
+            });
+        }
+
+        // Live Search Filter
+        function filterImages() {
+            const query = document.getElementById('searchBar').value.trim();
+            const filtered = imageList.filter(num => num.includes(query));
+            loadGallery(filtered);
+        }
+
+        // Open Image Lightbox
+        function openModal(num) {
+            const fileUrl = `${IMAGE_BASE_URL}${num}.webp`;
+            modalImg.src = fileUrl;
+            downloadBtn.href = fileUrl; 
+            modal.classList.add('active');
+        }
+
+        // Close Modal
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        // Initial Load
+        loadGallery(imageList);
+    </script>
+</body>
+</html>
