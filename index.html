@@ -141,14 +141,31 @@
 
     // डाउनलोड बटन को 100% वर्किंग बनाने के लिए Modal ओपन फंक्शन
     function openModal(num) {
-        const fileUrl = `${IMAGE_BASE_URL}${num}.webp`;
-        modalImg.src = fileUrl;
+    const fileUrl = `${IMAGE_BASE_URL}${num}.webp`;
+    modalImg.src = fileUrl;
+    
+    // डाउनलोड बटन को डायरेक्ट फ़ोन में सेव करने के लिए मजबूर करने वाला कोड
+    downloadBtn.onclick = (e) => {
+        e.preventDefault(); 
         
-        // 🚀 फिक्स: बिना नए टैब में भटकाए डायरेक्ट डाउनलोड के लिए कॉन्फ़िगरेशन
-        downloadBtn.href = fileUrl;
-        downloadBtn.setAttribute('download', `Wallpaper-${num}.webp`);
-        
-        modal.classList.add('active');
+        fetch(fileUrl)
+            .then(response => response.blob())
+            .then(blob => {
+                const blobURL = URL.createObjectURL(blob);
+                const tempAnchor = document.createElement('a');
+                tempAnchor.href = blobURL;
+                tempAnchor.setAttribute('download', `Wallpaper-${num}.webp`);
+                document.body.appendChild(tempAnchor);
+                tempAnchor.click();
+                document.body.removeChild(tempAnchor);
+                URL.revokeObjectURL(blobURL);
+            })
+            .catch(err => {
+                window.open(fileUrl, '_blank');
+            });
+    };
+    
+    modal.classList.add('active');
     }
 
     function closeModal() {
