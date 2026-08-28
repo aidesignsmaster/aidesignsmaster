@@ -751,12 +751,20 @@ h1::after {
 
     // पेज बदलने और बटन्स को मैनेज करने का फंक्शन
     function updatePaginationControls(totalItems) {
-        const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
-        document.getElementById('pageInfo').innerText = `Page ${currentPage} of ${totalPages}`;
-        
-        document.getElementById('prevBtn').disabled = (currentPage === 1);
-        document.getElementById('nextBtn').disabled = (currentPage === totalPages);
-        function goToPage() {
+    const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
+
+    document.getElementById('pageInfo').innerText =
+        `Page ${currentPage} of ${totalPages}`;
+
+    document.getElementById('prevBtn').disabled =
+        (currentPage === 1);
+
+    document.getElementById('nextBtn').disabled =
+        (currentPage === totalPages);
+}
+
+
+function goToPage() {
     const pageInput = document.getElementById('pageSearch');
     const requestedPage = parseInt(pageInput.value);
 
@@ -781,8 +789,7 @@ h1::after {
     });
 
     pageInput.value = "";
-        }
-    }
+}
 
     function changePage(direction) {
         currentPage += direction;
