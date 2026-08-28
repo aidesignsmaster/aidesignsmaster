@@ -13,46 +13,541 @@
 
   gtag('config', 'G-8G185SNCZP');
 </script>
-    <style>
-        /* बेसिक स्टाइलिंग - आप इसे अपनी पसंद के अनुसार बदल सकते हैं */
-        body { font-family: Arial, sans-serif; background-color: #0d1117; color: white; margin: 0; padding: 20px; text-align: center; }
-        h1 { margin-bottom: 20px; }
-        .search-container { margin-bottom: 30px; }
-        .search-bar { padding: 12px; width: 80%; max-width: 400px; border-radius: 25px; border: none; font-size: 16px; outline: none; }
-        
-        /* गैलरी ग्रिड */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 10px; max-width: 1200px; margin: 0 auto; }
-        .card { background: #161b22; border-radius: 12px; padding: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer; transition: transform 0.2s; }
-        .card:hover { transform: scale(1.03); }
-        .card img { width: 100%; height: auto; border-radius: 8px; object-fit: cover; }
-        .card-info { margin-top: 10px; font-size: 14px; color: #8b949e; }
-        
-        /* Pagination (Next/Prev बटन) स्टाइल */
-        .pagination-container { margin: 40px 0; display: flex; justify-content: center; gap: 15px; align-items: center; }
-        .btn-page { background-color: #21262d; color: #c9d1d9; border: 1px solid #30363d; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 15px; transition: 0.2s; }
-        .btn-page:hover:not(:disabled) { background-color: #30363d; color: white; }
-        .btn-page:disabled { opacity: 0.4; cursor: not-allowed; }
-        #pageInfo { font-size: 16px; color: #c9d1d9; font-weight: bold; }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
 
-        /* Modal / Lightbox स्टाइल */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
-        .modal.active { display: flex; }
-        .modal-content { background: #161b22; padding: 20px; border-radius: 12px; max-width: 90%; max-height: 90%; text-align: center; }
-        .modal-content img { max-width: 100%; max-height: 70vh; border-radius: 8px; }
-        .btn-container { margin-top: 15px; display: flex; gap: 10px; justify-content: center; }
-        .btn-download, .btn-close { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; text-decoration: none; font-size: 14px; }
-        .btn-download { background-color: #238636; color: white; }
-        .btn-close { background-color: #da3633; color: white; }
-    </style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', Arial, sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(88, 101, 242, 0.16), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(0, 210, 255, 0.12), transparent 25%),
+        radial-gradient(circle at 50% 90%, rgba(147, 51, 234, 0.12), transparent 30%),
+        #070b14;
+    color: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Background glow */
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: rgba(96, 165, 250, 0.08);
+    filter: blur(120px);
+    border-radius: 50%;
+    top: -200px;
+    left: -200px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: rgba(168, 85, 247, 0.08);
+    filter: blur(120px);
+    border-radius: 50%;
+    bottom: -200px;
+    right: -200px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    width: min(1100px, calc(100% - 30px));
+    margin: 28px auto 38px;
+    padding: 38px 25px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    background: rgba(18, 25, 39, 0.68);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(59,130,246,0.22), transparent 65%);
+    top: -180px;
+    left: -100px;
+    pointer-events: none;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(168,85,247,0.18), transparent 65%);
+    bottom: -180px;
+    right: -100px;
+    pointer-events: none;
+}
+
+h1 {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #ffffff, #9ecbff 45%, #d8b4fe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 35px rgba(96,165,250,0.18);
+}
+
+h1::after {
+    content: "Premium AI Wallpaper Collection";
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8493a9;
+    background: none;
+    -webkit-text-fill-color: #8493a9;
+}
+
+/* ================= SEARCH ================= */
+
+.search-container {
+    position: relative;
+    z-index: 2;
+    max-width: 580px;
+    margin: 28px auto 0;
+}
+
+.search-container::before {
+    content: "⌕";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    color: #8ea0b8;
+    z-index: 3;
+}
+
+.search-bar {
+    width: 100%;
+    height: 58px;
+    padding: 0 20px 0 55px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.09);
+    outline: none;
+    color: white;
+    background: rgba(5, 10, 18, 0.65);
+    font-family: inherit;
+    font-size: 16px;
+    box-shadow:
+        inset 0 1px 8px rgba(0,0,0,0.2),
+        0 10px 35px rgba(0,0,0,0.18);
+    transition: 0.3s ease;
+}
+
+.search-bar::placeholder {
+    color: #718096;
+}
+
+.search-bar:hover {
+    border-color: rgba(147,197,253,0.25);
+}
+
+.search-bar:focus {
+    border-color: #60a5fa;
+    box-shadow:
+        0 0 0 4px rgba(96,165,250,0.12),
+        0 12px 40px rgba(0,0,0,0.25);
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 20px;
+    width: min(1300px, calc(100% - 30px));
+    margin: 0 auto;
+    padding: 0;
+}
+
+.card {
+    position: relative;
+    background: rgba(18, 25, 39, 0.75);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: left;
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+    transition:
+        transform 0.35s cubic-bezier(.2,.8,.2,1),
+        border-color 0.35s,
+        box-shadow 0.35s;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+        135deg,
+        rgba(96,165,250,0.16),
+        transparent 35%,
+        transparent 70%,
+        rgba(168,85,247,0.12)
+    );
+    opacity: 0;
+    transition: 0.35s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(147,197,253,0.35);
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.38),
+        0 0 30px rgba(59,130,246,0.08);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 14px;
+    background: #0d1117;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-info {
+    position: relative;
+    z-index: 3;
+    padding: 12px 8px 7px;
+    margin: 0;
+}
+
+.card-info p,
+.card-title {
+    margin: 0;
+    color: #d7e0ec;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* ================= PAGINATION ================= */
+
+.pagination-container {
+    width: min(600px, calc(100% - 30px));
+    margin: 45px auto 30px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 18px;
+    background: rgba(18,25,39,0.6);
+    border: 1px solid rgba(255,255,255,0.06);
+    backdrop-filter: blur(15px);
+}
+
+.btn-page {
+    min-height: 46px;
+    padding: 0 20px;
+    border-radius: 13px;
+    border: 1px solid rgba(255,255,255,0.09);
+    color: #dce7f4;
+    background: rgba(255,255,255,0.04);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-page:hover:not(:disabled) {
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+}
+
+.btn-page:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+#pageInfo {
+    min-width: 115px;
+    color: #aab8ca;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ================= MODAL ================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    padding: 20px;
+    background: rgba(2, 5, 10, 0.86);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+    animation: fadeIn 0.25s ease;
+}
+
+.modal-content {
+    width: min(850px, 100%);
+    max-height: 94vh;
+    padding: 15px;
+    border-radius: 25px;
+    background: rgba(18,25,39,0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 30px 100px rgba(0,0,0,0.6);
+    overflow: auto;
+}
+
+.modal-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 72vh;
+    margin: auto;
+    border-radius: 17px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.4);
+}
+
+.btn-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-download,
+.btn-close {
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 13px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s;
+}
+
+.btn-download {
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(37,99,235,0.35);
+}
+
+.btn-close {
+    color: #ffb4b4;
+    background: rgba(239,68,68,0.1);
+    border: 1px solid rgba(239,68,68,0.2);
+}
+
+.btn-close:hover {
+    color: white;
+    background: #dc2626;
+}
+
+/* ================= NO RESULT ================= */
+
+.gallery-grid > p {
+    padding: 60px 20px;
+    color: #8493a9 !important;
+    font-size: 18px;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0;
+    }
+
+    header {
+        width: calc(100% - 20px);
+        margin: 10px auto 28px;
+        padding: 30px 15px;
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    h1::after {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .gallery-grid {
+        width: calc(100% - 20px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .card {
+        padding: 5px;
+        border-radius: 14px;
+    }
+
+    .card img {
+        border-radius: 10px;
+    }
+
+    .card-info {
+        padding: 9px 5px 5px;
+    }
+
+    .card-info p,
+    .card-title {
+        font-size: 11px;
+    }
+
+    .pagination-container {
+        width: calc(100% - 20px);
+        gap: 6px;
+        margin-top: 30px;
+        padding: 7px;
+    }
+
+    .btn-page {
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    #pageInfo {
+        min-width: 85px;
+        font-size: 11px;
+    }
+
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-content {
+        padding: 10px;
+        border-radius: 18px;
+    }
+
+    .btn-download,
+    .btn-close {
+        padding: 0 16px;
+        min-height: 45px;
+        font-size: 12px;
+    }
+    .hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #8998ad;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+</style>
+}
+    </style> 
 </head>
 <body>
+<header>
+    <div class="brand-badge">✦ AI DESIGNS MASTER</div>
 
-    <header>
-        <h1>AI Designs Master Gallery</h1>
-        <div class="search-container">
-            <input type="text" id="searchBar" class="search-bar" placeholder="Search wallpaper number..." oninput="filterImages()">
-        </div>
-    </header>
+    <h1>Discover Amazing AI Designs</h1>
+
+    <p class="hero-text">
+        Explore a premium collection of beautiful AI wallpapers and creative designs.
+    </p>
+
+    <div class="search-container">
+        <input
+            type="text"
+            id="searchBar"
+            class="search-bar"
+            placeholder="Search wallpaper number..."
+            oninput="filterImages()"
+            autocomplete="off"
+        >
+    </div>
+</header>
 
     <!-- इमेजेस यहाँ लोड होंगी -->
     <main class="gallery-grid" id="galleryGrid"></main>
