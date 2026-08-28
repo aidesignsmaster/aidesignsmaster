@@ -457,6 +457,71 @@ h1::after {
         letter-spacing: 1.5px;
     }
 
+/* ================= BRAND & HERO ================= */
+
+.brand-badge {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    border-radius: 999px;
+    color: #9ecbff;
+    background: rgba(96,165,250,0.08);
+    border: 1px solid rgba(96,165,250,0.18);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #8998ad;
+    font-size: 15px;
+    line-height: 1.7;
+}
+    
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0;
+    }
+
+    header {
+        width: calc(100% - 20px);
+        margin: 10px auto 28px;
+        padding: 30px 15px;
+        border-radius: 22px;
+    }
+
+    .brand-badge {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+        padding: 7px 12px;
+        margin-bottom: 12px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    h1::after {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-text {
+        font-size: 13px;
+        line-height: 1.6;
+        padding: 0 8px;
+    }
+
     .gallery-grid {
         width: calc(100% - 20px);
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -513,19 +578,9 @@ h1::after {
         min-height: 45px;
         font-size: 12px;
     }
-    .hero-text {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-    margin: 0 auto;
-    color: #8998ad;
-    font-size: 15px;
-    line-height: 1.7;
 }
 
-</style>
-}
-    </style> 
+</style>  
 </head>
 <body>
 <header>
