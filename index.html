@@ -325,6 +325,34 @@ h1::after {
     font-size: 14px;
     font-weight: 600;
 }
+    .page-search {
+    width: 70px;
+    height: 46px;
+    border-radius: 13px;
+    border: 1px solid rgba(255,255,255,0.09);
+    background: rgba(255,255,255,0.04);
+    color: white;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.page-search:focus {
+    border-color: #60a5fa;
+}
+
+.page-go {
+    height: 46px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 13px;
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
 
 /* ================= MODAL ================= */
 
@@ -609,6 +637,8 @@ h1::after {
 
     <!-- 🌟 नया फीचर: Pagination बटन्स -->
     <div class="pagination-container">
+        <input type="number" id="pageSearch" class="page-search" placeholder="Page">
+<button class="page-go" onclick="goToPage()">Go</button>
         <button id="prevBtn" class="btn-page" onclick="changePage(-1)">⏮️ Previous</button>
         <span id="pageInfo">Page 1</span>
         <button id="nextBtn" class="btn-page" onclick="changePage(1)">Next ⏭️</button>
@@ -726,6 +756,32 @@ h1::after {
         
         document.getElementById('prevBtn').disabled = (currentPage === 1);
         document.getElementById('nextBtn').disabled = (currentPage === totalPages);
+        function goToPage() {
+    const pageInput = document.getElementById('pageSearch');
+    const requestedPage = parseInt(pageInput.value);
+
+    const totalPages = Math.ceil(
+        currentFilteredList.length / itemsPerPage
+    );
+
+    if (
+        !requestedPage ||
+        requestedPage < 1 ||
+        requestedPage > totalPages
+    ) {
+        return;
+    }
+
+    currentPage = requestedPage;
+    loadGallery();
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    pageInput.value = "";
+        }
     }
 
     function changePage(direction) {
