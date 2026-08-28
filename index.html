@@ -607,6 +607,48 @@ h1::after {
         font-size: 12px;
     }
 }
+    .converter-box {
+    width: min(600px, calc(100% - 30px));
+    margin: 40px auto;
+    padding: 30px 20px;
+    border-radius: 22px;
+    background: rgba(18, 25, 39, 0.75);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.converter-box h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.converter-box p {
+    color: #8998ad;
+    margin-bottom: 20px;
+}
+
+.converter-input {
+    width: 100%;
+    padding: 12px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.converter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.convert-btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
 
 </style>  
 </head>
@@ -634,6 +676,23 @@ h1::after {
 
     <!-- इमेजेस यहाँ लोड होंगी -->
     <main class="gallery-grid" id="galleryGrid"></main>
+    <!-- IMAGE CONVERTER -->
+<div class="converter-box">
+    <h2>WEBP to JPG / PNG Converter</h2>
+    <p>Upload a WEBP image and convert it instantly.</p>
+
+    <input type="file" id="imageUpload" accept="image/webp" class="converter-input">
+
+    <div class="converter-buttons">
+        <button onclick="convertImage('image/jpeg')" class="convert-btn">
+            Convert to JPG
+        </button>
+
+        <button onclick="convertImage('image/png')" class="convert-btn">
+            Convert to PNG
+        </button>
+    </div>
+</div>
 
     <!-- 🌟 नया फीचर: Pagination बटन्स -->
     <div class="pagination-container">
@@ -836,6 +895,58 @@ function goToPage() {
 
     function closeModal() {
         modal.classList.remove('active');
+    }
+    function convertImage(format) {
+    const input = document.getElementById('imageUpload');
+
+    if (!input.files || !input.files[0]) {
+        alert('Please select a WEBP image first.');
+        return;
+    }
+
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+        const img = new Image();
+
+        img.onload = function() {
+            const canvas = document.createElement('canvas');
+
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+            const ctx = canvas.getContext('2d');
+
+            if (format === 'image/jpeg') {
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+
+            ctx.drawImage(img, 0, 0);
+
+            const extension =
+                format === 'image/png' ? 'png' : 'jpg';
+
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `converted-image.${extension}`;
+
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                URL.revokeObjectURL(url);
+            }, format, 0.95);
+        };
+
+        img.src = event.target.result;
+    };
+
+    reader.readAsDataURL(file);
     }
 
     // पहली बार वेबसाइट खुलने पर गैलरी लोड करना
