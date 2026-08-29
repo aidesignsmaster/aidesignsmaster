@@ -649,6 +649,52 @@ h1::after {
     font-weight: 600;
     cursor: pointer;
 }
+    /* ================= CATEGORY BUTTONS ================= */
+
+.category-container {
+    position: relative;
+    z-index: 2;
+    width: min(1000px, calc(100% - 30px));
+    margin: 25px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.category-btn {
+    padding: 11px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.05);
+    color: #dce7f4;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.25);
+}
+
+@media (max-width: 600px) {
+    .category-container {
+        width: calc(100% - 20px);
+        gap: 7px;
+    }
+
+    .category-btn {
+        padding: 9px 11px;
+        font-size: 10px;
+    }
+}
 
 </style>  
 </head>
@@ -672,6 +718,17 @@ h1::after {
             autocomplete="off"
         >
     </div>
+    <!-- CATEGORY BUTTONS -->
+<div class="category-container">
+    <button class="category-btn active" onclick="selectCategory('all', this)">All Designs</button>
+    <button class="category-btn" onclick="selectCategory('gods', this)">🕉️ Gods & Festivals</button>
+    <button class="category-btn" onclick="selectCategory('characters', this)">🦸 Characters</button>
+    <button class="category-btn" onclick="selectCategory('animals', this)">🦁 Animals & Nature</button>
+    <button class="category-btn" onclick="selectCategory('love', this)">❤️ Love & Couples</button>
+    <button class="category-btn" onclick="selectCategory('events', this)">🌍 Global Events</button>
+    <button class="category-btn" onclick="selectCategory('fantasy', this)">🔮 Fantasy & Abstract</button>
+    <button class="category-btn" onclick="selectCategory('food', this)">🍔 Food & Drinks</button>
+</div>
 </header>
 
     <!-- इमेजेस यहाँ लोड होंगी -->
@@ -768,6 +825,129 @@ h1::after {
         
 ];
 
+    const categories = {
+
+    gods: [
+        "4894","4896","5002","5003","5004","5008","5009",
+        "5010","5012","5013","5014","5118","5120","5126",
+        "8014","9650","9651","9657","9658","9677",
+
+        "5121","5122","5124","5125","9652","9655","9659","9662",
+
+        "4908","4910","4911","4912","4915","4919","4920",
+        "4926","4927",
+
+        "3825","3826","3934","3935","3936","3957","4004",
+        "4085","4086","4087","4088","4089","4096","4098",
+        "4185","9656",
+
+        "3823","3930","3932","3933","3941","3943","3950","4014",
+
+        "3937","3938","3939","3940","3951","3955","3963",
+        "4015","4017","4019",
+
+        "3954","3956","3958","3959","3960","3961","3962",
+        "3964","3965","4018",
+
+        "5157","5158","5159","5160","5161","5162","5163",
+        "5164","5165","5166","5657","5658","5659"
+    ],
+
+    characters: [
+        "3833","3834","4045","6810","6811","7373",
+        "3850","4040","6783","6786","6789",
+        "8158","8159","8160","8161","8162",
+        "9369","9370","9373","9374","9375","9378",
+        "8068","8069","8070","8071","8072",
+        "8880","8881","8882","8883","8884",
+        "9678",
+        "3909","3911","4041","4043","4044",
+        "6800","6809","7372"
+    ],
+
+    animals: [
+        "3828","3831","3870","3907","4037","4051","4053",
+        "6595","6596","6779","6782","6799","6801","6802",
+        "7399","7401","8258","8429","9681","9689","9691","9693",
+
+        "6693","6701","7476","7478","7479","7480","7481",
+        "7520","7522","7523","9694",
+
+        "3869","3902","3903","3904","6695","6696","6702","7402",
+
+        "3906","3912","6694","6703","7417",
+
+        "6719","6720","6722","7416","7516","8259","8260",
+        "8264","8268","8269","8270",
+
+        "8256","8257","9690","10174",
+
+        "6812","6813","6814","6815","6816","9692","6721","7404",
+
+        "3829","3835","3908","3988","3990","4008","4010",
+        "4011","4049","4052","4227","4229","6562"
+    ],
+
+    love: [
+        "6640","6641","6642","6644","6645","6646",
+        "6682","6683","6684","6685",
+
+        "7597","7598","7599","7600",
+
+        "4953","4956","4957","4958","4959","4960",
+        "4961","4962","4963","4964","4965","4966",
+
+        "5579","5580","9667","9668","9673",
+
+        "7602","7603","7604","7605","7606",
+        "9663","9666","9674"
+    ],
+
+    events: [
+        "3923","3924","3926","3927","4020","4091",
+        "4189","4090","4093",
+
+        "4025","4026","4033","4034","4036",
+
+        "4024","4027","4032","4028","4029","4030",
+        "3931","4035","4031"
+    ],
+
+    fantasy: [
+        "8136","8137","8138","8139",
+
+        "8263","8265","8266","8267","8271","8373",
+        "8624","8625","8626","8627","8628",
+        "8873","8874","8875","8876","8877",
+
+        "6753","6754","6755","6756","6757","8010",
+        "6769","6770","6771","6772",
+
+        "6827","6828","6829","6830","6831","6832",
+        "7160","7394","7395","7396","6725","6726",
+        "6727","6728","6729","8118","8155","10171","10172",
+
+        "6700","7439","7440","7443","7444","7445",
+        "7449","7450","7451","7452","6688","6689",
+        "6691","6780","6781","7407","7408","7409","7403",
+
+        "3837","3838","3857","3868","6589",
+
+        "3832","3871","4012","4054","4195","9686",
+
+        "3918","3920","3921","3989","4038","4039",
+        "4046","4048","4217","4050","4081","4154",
+        "4156","4178","4182","4184","4208","5815",
+        "6556","6558","6561","9366","9379","9669",
+        "9672","9682","9683","9684","9685","10175"
+    ],
+
+    food: [
+        "3897","3900","4094",
+        "3872","3893","3894","4159","4177","4193","9688",
+        "3878","3889","4150","4176","4194","9687"
+    ]
+};
     let currentFilteredList = [...imagelist]; // सर्च फिल्टर के लिए बैकअप लिस्ट
     let currentPage = 1;
     const itemsPerPage = 12; // ⚡ एक बार में केवल 12 इमेजेस लोड होंगी (बिल्कुल स्मूथ चलेगा)
@@ -857,12 +1037,45 @@ function goToPage() {
     }
 
     // लाइव सर्च फ़िल्टर
-    function filterImages() {
-        const query = document.getElementById('searchBar').value.trim();
-        currentFilteredList = imagelist.filter(num => num.includes(query));
-        currentPage = 1; // सर्च करने पर वापस पहले पेज से शुरुआत होगी
-        loadGallery();
+    let currentCategory = "all";
+
+function selectCategory(category, button) {
+
+    currentCategory = category;
+    currentPage = 1;
+
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    filterImages();
+}
+
+function filterImages() {
+
+    const query = document
+        .getElementById('searchBar')
+        .value
+        .trim()
+        .toLowerCase();
+
+    let sourceList;
+
+    if (currentCategory === "all") {
+        sourceList = imagelist;
+    } else {
+        sourceList = categories[currentCategory];
     }
+
+    currentFilteredList = sourceList.filter(num =>
+        num.includes(query)
+    );
+
+    currentPage = 1;
+    loadGallery();
+}
 
     // डाउनलोड बटन को 100% वर्किंग बनाने के लिए Modal ओपन फंक्शन
     function openModal(num) {
