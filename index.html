@@ -760,7 +760,7 @@ h1::after {
     <!-- इमेजेस यहाँ लोड होंगी -->
     <main class="gallery-grid" id="galleryGrid"></main>
     <!-- IMAGE COMPRESSOR -->
-<div class="converter-box">
+    <div class="converter-box">
     <h2>Image Compressor</h2>
     <p>Upload an image and reduce its file size.</p>
         <div class="converter-buttons">
@@ -769,34 +769,36 @@ h1::after {
             Compress Image
         </button>
     </div>
-</div>
-    <!-- IMAGE RESIZER -->
+    </div>
+<!-- IMAGE RESIZER -->
 <div class="converter-box">
     <h2>Image Resizer</h2>
     <p>Upload an image and set a new size.</p>
 
     <input type="file" id="resizeUpload" accept="image/*" class="converter-input">
-        <input type="number" id="resizeWidth" placeholder="Width (px)" class="converter-input" style="color: black !important;">
-<input type="number" id="resizeHeight" placeholder="Height (px)" class="converter-input" style="color: black !important;">
+
+    <input type="number" id="resizeWidth" placeholder="Width (px)"
+        class="converter-input" style="color: black !important;">
+
+    <input type="number" id="resizeHeight" placeholder="Height (px)"
+        class="converter-input" style="color: black !important;">
+
     <div class="converter-buttons">
         <button onclick="resizeImage()" class="convert-btn">
             Resize Image
         </button>
-        <!-- IMAGE CONVERTER -->
+    </div>
+</div>
+
+
+<!-- IMAGE CONVERTER -->
 <div class="converter-box">
     <h2>Image Converter</h2>
 
-    <p>
-        Upload up to 50 images and convert them to JPG, PNG or WEBP.
-    </p>
+    <p>Upload up to 50 images and convert them to JPG, PNG or WEBP.</p>
 
-    <input
-        type="file"
-        id="imageUpload"
-        accept="image/*"
-        multiple
-        class="converter-input"
-    >
+    <input type="file" id="imageUpload" accept="image/*"
+        multiple class="converter-input">
 
     <div class="converter-buttons">
 
@@ -814,22 +816,6 @@ h1::after {
 
     </div>
 </div>
-    </div>
-</div>
-
-    <input type="file" id="imageUpload" accept="image/webp" class="converter-input">
-
-    <div class="converter-buttons">
-        <button onclick="convertImage('image/jpeg')" class="convert-btn">
-            Convert to JPG
-        </button>
-
-        <button onclick="convertImage('image/png')" class="convert-btn">
-            Convert to PNG
-        </button>
-    </div>
-</div>
-
     <!-- 🌟 नया फीचर: Pagination बटन्स -->
     <div class="pagination-container">
         <input type="number" id="pageSearch" class="page-search" placeholder="Page" min="1">
@@ -1332,8 +1318,8 @@ function filterImages() {
         return;
     }
 
-    if (files.length > 20) {
-        alert('Please select maximum 20 images at a time.');
+    if (files.length > 50) {
+        alert('Please select maximum 50 images at a time.');
         return;
     }
 
