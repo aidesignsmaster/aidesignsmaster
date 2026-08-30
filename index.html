@@ -1022,17 +1022,21 @@ const categories = {
 
     // पेज बदलने और बटन्स को मैनेज करने का फंक्शन
     function updatePaginationControls(totalItems) {
-    const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
+
+    const totalPages =
+        Math.ceil(totalItems / itemsPerPage);
 
     document.getElementById('pageInfo').innerText =
-        `Page ${currentPage} of ${totalPages}`;
+        totalItems === 0
+            ? 'No Pages'
+            : `Page ${currentPage} of ${totalPages}`;
 
     document.getElementById('prevBtn').disabled =
-        (currentPage === 1);
+        currentPage <= 1;
 
     document.getElementById('nextBtn').disabled =
-        (currentPage === totalPages);
-}
+        totalItems === 0 || currentPage >= totalPages;
+    }
     function goToPage() {
 
     const pageInput =
