@@ -759,10 +759,6 @@ h1::after {
 
     <!-- इमेजेस यहाँ लोड होंगी -->
     <main class="gallery-grid" id="galleryGrid"></main>
-    <!-- IMAGE CONVERTER -->
-<div class="converter-box">
-    <h2>WEBP to JPG / PNG Converter</h2>
-    <p>Upload a WEBP image and convert it instantly.</p>
     <!-- IMAGE COMPRESSOR -->
 <div class="converter-box">
     <h2>Image Compressor</h2>
@@ -786,6 +782,38 @@ h1::after {
         <button onclick="resizeImage()" class="convert-btn">
             Resize Image
         </button>
+        <!-- IMAGE CONVERTER -->
+<div class="converter-box">
+    <h2>Image Converter</h2>
+
+    <p>
+        Upload up to 50 images and convert them to JPG, PNG or WEBP.
+    </p>
+
+    <input
+        type="file"
+        id="imageUpload"
+        accept="image/*"
+        multiple
+        class="converter-input"
+    >
+
+    <div class="converter-buttons">
+
+        <button onclick="convertImage('image/jpeg')" class="convert-btn">
+            Convert to JPG
+        </button>
+
+        <button onclick="convertImage('image/png')" class="convert-btn">
+            Convert to PNG
+        </button>
+
+        <button onclick="convertImage('image/webp')" class="convert-btn">
+            Convert to WEBP
+        </button>
+
+    </div>
+</div>
     </div>
 </div>
 
@@ -1192,58 +1220,109 @@ function filterImages() {
     function closeModal() {
         modal.classList.remove('active');
     }
-    function convertImage(format) {
+    async function convertImage(format) {
     const input = document.getElementById('imageUpload');
+    const files = Array.from(input.files);
 
-    if (!input.files || !input.files[0]) {
-        alert('Please select a WEBP image first.');
+    if (files.length === 0) {
+        alert('Please select images first.');
         return;
     }
 
-    const file = input.files[0];
-    const reader = new FileReader();
-
-    reader.onload = function(event) {
-        const img = new Image();
-
-        img.onload = function() {
-            const canvas = document.createElement('canvas');
-
-            canvas.width = img.width;
-            canvas.height = img.height;
-
-            const ctx = canvas.getContext('2d');
-
-            if (format === 'image/jpeg') {
-                ctx.fillStyle = '#ffffff';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-            }
-
-            ctx.drawImage(img, 0, 0);
-
-            const extension =
-                format === 'image/png' ? 'png' : 'jpg';
-
-            canvas.toBlob(function(blob) {
-                const url = URL.createObjectURL(blob);
-
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = `converted-image.${extension}`;
-
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-
-                URL.revokeObjectURL(url);
-            }, format, 0.95);
-        };
-
-        img.src = event.target.result;
-    };
-
-    reader.readAsDataURL(file);
+    if (files.length > 50) {
+        alert('Please select maximum 50 images at a time.');
+        return;
     }
+
+    let extension = 'jpg';
+
+    if (format === 'image/png') {
+        extension = 'png';
+    } else if (format === 'image/webp') {
+        extension = 'webp';
+    }
+
+    alert(`Converting ${files.length} images. Please wait...`);
+
+    // Images ek-ek karke convert hongi,
+    // isliye ek saath 50 images se website par heavy load nahi padega.
+    for (const file of files) {
+
+        await new Promise((resolve) => {
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const img = new Image();
+
+                img.onload = function() {
+                    const canvas =
+                        document.createElement('canvas');
+
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    const ctx = canvas.getContext('2d');
+
+                    // JPG ke liye transparent background white
+                    if (format === 'image/jpeg') {
+                        ctx.fillStyle = '#ffffff';
+                        ctx.fillRect(
+                            0,
+                            0,
+                            canvas.width,
+                            canvas.height
+                        );
+                    }
+
+                    ctx.drawImage(img, 0, 0);
+
+                    canvas.toBlob(function(blob) {
+
+                        if (!blob) {
+                            resolve();
+                            return;
+                        }
+
+                        const url =
+                            URL.createObjectURL(blob);
+
+                        const link =
+                            document.createElement('a');
+
+                        const fileName =
+                            file.name.replace(/\.[^/.]+$/, '');
+
+                        link.href = url;
+                        link.download =
+                            `${fileName}.${extension}`;
+
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+
+                        setTimeout(() => {
+                            URL.revokeObjectURL(url);
+                            resolve();
+                        }, 300);
+
+                    }, format, 0.95);
+                };
+
+                img.onerror = function() {
+                    resolve();
+                };
+
+                img.src = event.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        });
+    }
+
+    alert(`All ${files.length} images converted successfully!`);
+
+    input.value = '';
+                            }
     async function compressImage() {
     const input = document.getElementById('compressUpload');
     const files = Array.from(input.files);
