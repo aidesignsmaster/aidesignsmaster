@@ -768,7 +768,7 @@ h1::after {
     <h2>Image Compressor</h2>
     <p>Upload an image and reduce its file size.</p>
         <div class="converter-buttons">
-            <input type="file" id="compressUpload" accept="image/*" class="converter-input" style="margin-bottom: 15px; color: white;">
+           <input type="file" id="compressUpload" accept="image/*" multiple class="converter-input" style="margin-bottom: 15px; color: white;">
         <button onclick="compressImage()" class="convert-btn">
             Compress Image
         </button>
@@ -1244,49 +1244,69 @@ function filterImages() {
 
     reader.readAsDataURL(file);
     }
-    function compressImage() {
+    async function compressImage() {
     const input = document.getElementById('compressUpload');
+    const files = Array.from(input.files);
 
-    if (!input.files || !input.files[0]) {
-        alert('Please select an image first.');
+    if (files.length === 0) {
+        alert('Please select images first.');
         return;
     }
 
-    const file = input.files[0];
-    const reader = new FileReader();
+    if (files.length > 20) {
+        alert('Please select maximum 20 images at a time.');
+        return;
+    }
 
-    reader.onload = function(event) {
-        const img = new Image();
+    alert(`Compressing ${files.length} images. Please wait...`);
 
-        img.onload = function() {
-            const canvas = document.createElement('canvas');
+    for (const file of files) {
+        await new Promise((resolve) => {
+            const reader = new FileReader();
 
-            canvas.width = img.width;
-            canvas.height = img.height;
+            reader.onload = function(event) {
+                const img = new Image();
 
-            const ctx = canvas.getContext('2d');
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
 
-            ctx.drawImage(img, 0, 0);
+                    const maxWidth = 1920;
+                    const scale = Math.min(1, maxWidth / img.width);
 
-            canvas.toBlob(function(blob) {
-                const url = URL.createObjectURL(blob);
+                    canvas.width = Math.round(img.width * scale);
+                    canvas.height = Math.round(img.height * scale);
 
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = 'compressed-image.jpg';
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                    canvas.toBlob(function(blob) {
+                        const url = URL.createObjectURL(blob);
 
-                URL.revokeObjectURL(url);
-            }, 'image/jpeg', 0.7);
-        };
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.download =
+                            `compressed-${file.name.replace(/\.[^/.]+$/, '')}.jpg`;
 
-        img.src = event.target.result;
-    };
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
 
-    reader.readAsDataURL(file);
+                        setTimeout(() => {
+                            URL.revokeObjectURL(url);
+                            resolve();
+                        }, 300);
+                    }, 'image/jpeg', 0.7);
+                };
+
+                img.src = event.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        });
+    }
+
+    alert('All images compressed successfully!');
+    input.value = '';
     }
     function resizeImage() {
     const input = document.getElementById('resizeUpload');
