@@ -463,28 +463,6 @@ h1::after {
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 600px) {
-
-    body {
-        padding: 0;
-    }
-
-    header {
-        width: calc(100% - 20px);
-        margin: 10px auto 28px;
-        padding: 30px 15px;
-        border-radius: 22px;
-    }
-
-    h1 {
-        font-size: 29px;
-    }
-
-    h1::after {
-        font-size: 10px;
-        letter-spacing: 1.5px;
-    }
-
 /* ================= BRAND & HERO ================= */
 
 .brand-badge {
@@ -720,14 +698,62 @@ h1::after {
     </div>
     <!-- CATEGORY BUTTONS -->
 <div class="category-container">
-    <button class="category-btn active" onclick="selectCategory('all', this)">All Designs</button>
-    <button class="category-btn" onclick="selectCategory('gods', this)">🕉️ Gods & Festivals</button>
-    <button class="category-btn" onclick="selectCategory('characters', this)">🦸 Characters</button>
-    <button class="category-btn" onclick="selectCategory('animals', this)">🦁 Animals & Nature</button>
-    <button class="category-btn" onclick="selectCategory('love', this)">❤️ Love & Couples</button>
-    <button class="category-btn" onclick="selectCategory('events', this)">🌍 Global Events</button>
-    <button class="category-btn" onclick="selectCategory('fantasy', this)">🔮 Fantasy & Abstract</button>
-    <button class="category-btn" onclick="selectCategory('food', this)">🍔 Food & Drinks</button>
+
+    <button class="category-btn active"
+        onclick="selectCategory('all', this)">
+        All Designs
+    </button>
+
+    <button class="category-btn"
+        onclick="selectCategory('gods', this)">
+        🕉️ Indian Gods
+    </button>
+
+    <button class="category-btn"
+        onclick="selectCategory('characters', this)">
+        🦸 Characters
+    </button>
+
+    <button class="category-btn"
+        onclick="selectCategory('animals', this)">
+        🦁 Animals
+    </button>
+
+    <button class="category-btn"
+        onclick="selectCategory('love', this)">
+        ❤️ Love & Family
+    </button>
+
+    <button class="category-btn"
+        onclick="selectCategory('events', this)">
+        🪔 Festivals & Events
+    </button>
+
+    <button class="category-btn"
+        onclick="selectCategory('nature', this)">
+        🌸 Nature
+    </button>
+
+    <button class="category-btn"
+        onclick="selectCategory('food', this)">
+        🍕 Food & Drinks
+    </button>
+
+    <button class="category-btn"
+        onclick="selectCategory('weapons', this)">
+        🛡️ Fantasy Weapons
+    </button>
+
+    <button class="category-btn"
+        onclick="selectCategory('places', this)">
+        🏙️ Places
+    </button>
+
+    <button class="category-btn"
+        onclick="selectCategory('abstract', this)">
+        🎨 Abstract & 3D
+    </button>
+
 </div>
 </header>
 
@@ -1007,25 +1033,30 @@ const categories = {
     document.getElementById('nextBtn').disabled =
         (currentPage === totalPages);
 }
+    function goToPage() {
 
+    const pageInput =
+        document.getElementById('pageSearch');
 
-function goToPage() {
-    const pageInput = document.getElementById('pageSearch');
-    const requestedPage = parseInt(pageInput.value);
+    const requestedPage =
+        parseInt(pageInput.value);
 
-    const totalPages = Math.ceil(
-        currentFilteredList.length / itemsPerPage
-    );
+    const totalPages =
+        Math.ceil(
+            currentFilteredList.length / itemsPerPage
+        );
 
     if (
-        !requestedPage ||
+        isNaN(requestedPage) ||
         requestedPage < 1 ||
         requestedPage > totalPages
     ) {
+        alert(`Please enter a page number between 1 and ${totalPages}`);
         return;
     }
 
     currentPage = requestedPage;
+
     loadGallery();
 
     window.scrollTo({
@@ -1034,13 +1065,29 @@ function goToPage() {
     });
 
     pageInput.value = "";
-}
+    }
 
     function changePage(direction) {
-        currentPage += direction;
-        loadGallery();
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // पेज बदलते ही ऊपर स्क्रॉल हो जाएगा
+
+    const totalPages = Math.ceil(
+        currentFilteredList.length / itemsPerPage
+    );
+
+    const newPage = currentPage + direction;
+
+    if (newPage < 1 || newPage > totalPages) {
+        return;
     }
+
+    currentPage = newPage;
+
+    loadGallery();
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+        }
 
     // लाइव सर्च फ़िल्टर
     let currentCategory = "all";
@@ -1064,22 +1111,23 @@ function filterImages() {
     const query = document
         .getElementById('searchBar')
         .value
-        .trim()
-        .toLowerCase();
+        .trim();
 
-    let sourceList;
+    let sourceList = imagelist;
 
-    if (currentCategory === "all") {
-        sourceList = imagelist;
-    } else {
+    if (
+        currentCategory !== "all" &&
+        categories[currentCategory]
+    ) {
         sourceList = categories[currentCategory];
     }
 
     currentFilteredList = sourceList.filter(num =>
-        num.includes(query)
+        String(num).includes(query)
     );
 
     currentPage = 1;
+
     loadGallery();
 }
 
