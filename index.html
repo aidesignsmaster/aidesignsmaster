@@ -1327,8 +1327,6 @@ function filterImages() {
         });
     }
 
-    alert(`All ${files.length} images converted successfully!`);
-
     input.value = '';
                             }
     async function compressImage(format) {
@@ -1344,9 +1342,9 @@ function filterImages() {
         return;
     }
 
-    if (files.length > 20) {
+    if (files.length > 50) {
         alert(
-            'Please select maximum 20 images at a time.'
+            'Please select maximum 50 images at a time.'
         );
         return;
     }
@@ -1360,10 +1358,6 @@ function filterImages() {
     if (format === 'image/webp') {
         extension = 'webp';
     }
-
-    alert(
-        `Compressing ${files.length} images. Please wait...`
-    );
 
     for (const file of files) {
 
@@ -1504,10 +1498,6 @@ function filterImages() {
         });
 
     }
-
-    alert(
-        `All ${files.length} images compressed successfully!`
-    );
 
     input.value = '';
 
