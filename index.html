@@ -759,17 +759,39 @@ h1::after {
 
     <!-- इमेजेस यहाँ लोड होंगी -->
     <main class="gallery-grid" id="galleryGrid"></main>
-    <!-- IMAGE COMPRESSOR -->
-    <div class="converter-box">
+   <!-- IMAGE COMPRESSOR -->
+<div class="converter-box">
     <h2>Image Compressor</h2>
-    <p>Upload an image and reduce its file size.</p>
-        <div class="converter-buttons">
-           <input type="file" id="compressUpload" accept="image/*" multiple class="converter-input" style="margin-bottom: 15px; color: white;">
-        <button onclick="compressImage()" class="convert-btn">
-            Compress Image
+
+    <p>
+        Upload up to 20 images and compress them as JPG, PNG or WEBP.
+    </p>
+
+    <input
+        type="file"
+        id="compressUpload"
+        accept="image/*"
+        multiple
+        class="converter-input"
+        style="margin-bottom: 15px; color: white;"
+    >
+
+    <div class="converter-buttons">
+
+        <button onclick="compressImage('image/jpeg')" class="convert-btn">
+            Compress JPG
         </button>
+
+        <button onclick="compressImage('image/png')" class="convert-btn">
+            Compress PNG
+        </button>
+
+        <button onclick="compressImage('image/webp')" class="convert-btn">
+            Compress WEBP
+        </button>
+
     </div>
-    </div>
+</div> 
 <!-- IMAGE RESIZER -->
 <div class="converter-box">
     <h2>Image Resizer</h2>
@@ -1309,70 +1331,187 @@ function filterImages() {
 
     input.value = '';
                             }
-    async function compressImage() {
-    const input = document.getElementById('compressUpload');
-    const files = Array.from(input.files);
+    async function compressImage(format) {
+
+    const input =
+        document.getElementById('compressUpload');
+
+    const files =
+        Array.from(input.files);
 
     if (files.length === 0) {
         alert('Please select images first.');
         return;
     }
 
-    if (files.length > 50) {
-        alert('Please select maximum 50 images at a time.');
+    if (files.length > 20) {
+        alert(
+            'Please select maximum 20 images at a time.'
+        );
         return;
     }
 
-    alert(`Compressing ${files.length} images. Please wait...`);
+    let extension = 'jpg';
+
+    if (format === 'image/png') {
+        extension = 'png';
+    }
+
+    if (format === 'image/webp') {
+        extension = 'webp';
+    }
+
+    alert(
+        `Compressing ${files.length} images. Please wait...`
+    );
 
     for (const file of files) {
+
         await new Promise((resolve) => {
-            const reader = new FileReader();
+
+            const reader =
+                new FileReader();
 
             reader.onload = function(event) {
-                const img = new Image();
+
+                const img =
+                    new Image();
 
                 img.onload = function() {
-                    const canvas = document.createElement('canvas');
+
+                    const canvas =
+                        document.createElement('canvas');
 
                     const maxWidth = 1920;
-                    const scale = Math.min(1, maxWidth / img.width);
 
-                    canvas.width = Math.round(img.width * scale);
-                    canvas.height = Math.round(img.height * scale);
+                    const scale =
+                        Math.min(
+                            1,
+                            maxWidth / img.width
+                        );
 
-                    const ctx = canvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    canvas.width =
+                        Math.round(
+                            img.width * scale
+                        );
 
-                    canvas.toBlob(function(blob) {
-                        const url = URL.createObjectURL(blob);
+                    canvas.height =
+                        Math.round(
+                            img.height * scale
+                        );
 
-                        const link = document.createElement('a');
-                        link.href = url;
-                        link.download =
-                            `compressed-${file.name.replace(/\.[^/.]+$/, '')}.jpg`;
+                    const ctx =
+                        canvas.getContext('2d');
 
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
+                    if (
+                        format === 'image/jpeg'
+                    ) {
 
-                        setTimeout(() => {
-                            URL.revokeObjectURL(url);
-                            resolve();
-                        }, 300);
-                    }, 'image/jpeg', 0.7);
+                        ctx.fillStyle =
+                            '#ffffff';
+
+                        ctx.fillRect(
+                            0,
+                            0,
+                            canvas.width,
+                            canvas.height
+                        );
+                    }
+
+                    ctx.drawImage(
+                        img,
+                        0,
+                        0,
+                        canvas.width,
+                        canvas.height
+                    );
+
+                    const quality =
+                        format === 'image/png'
+                            ? undefined
+                            : 0.7;
+
+                    canvas.toBlob(
+                        function(blob) {
+
+                            if (!blob) {
+                                resolve();
+                                return;
+                            }
+
+                            const url =
+                                URL.createObjectURL(
+                                    blob
+                                );
+
+                            const link =
+                                document.createElement(
+                                    'a'
+                                );
+
+                            const fileName =
+                                file.name.replace(
+                                    /\.[^/.]+$/,
+                                    ''
+                                );
+
+                            link.href = url;
+
+                            link.download =
+                                `compressed-${fileName}.${extension}`;
+
+                            document.body.appendChild(
+                                link
+                            );
+
+                            link.click();
+
+                            document.body.removeChild(
+                                link
+                            );
+
+                            setTimeout(
+                                () => {
+
+                                    URL.revokeObjectURL(
+                                        url
+                                    );
+
+                                    resolve();
+
+                                },
+                                300
+                            );
+
+                        },
+                        format,
+                        quality
+                    );
+
                 };
 
-                img.src = event.target.result;
+                img.onerror = function() {
+                    resolve();
+                };
+
+                img.src =
+                    event.target.result;
+
             };
 
             reader.readAsDataURL(file);
+
         });
+
     }
 
-    alert('All images compressed successfully!');
+    alert(
+        `All ${files.length} images compressed successfully!`
+    );
+
     input.value = '';
-    }
+
+        }
     function resizeImage() {
     const input = document.getElementById('resizeUpload');
     const widthInput = document.getElementById('resizeWidth');
