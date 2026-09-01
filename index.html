@@ -1066,17 +1066,38 @@ const categories = {
         const itemsToDisplay = currentFilteredList.slice(startIndex, endIndex);
 
         itemsToDisplay.forEach(num => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.onclick = () => openModal(num);
-            card.innerHTML = `
-                <img src="${IMAGE_BASE_URL}${num}.webp" alt="Wallpaper ${num}" loading="lazy">
-                <div class="card-info">
-                    <p class="card-title">Wallpaper ${num}</p>
-                </div>
-            `;
-            galleryGrid.appendChild(card);
-        });
+    // ऑटोमैटिक पता लगाने के लिए कि इमेज कौन सी कैटेगरी की है ताकि सही SEO कीवर्ड मिल सके
+    let seoKeyword = "Beautiful AI Design 4K"; 
+    
+    for (const [catName, catArray] of Object.entries(categories)) {
+        if (catArray.includes(String(num)) || catArray.includes(Number(num))) {
+            if (catName === 'gods') seoKeyword = "Lord Shiva Indian Gods Mythological HD";
+            else if (catName === 'characters') seoKeyword = "Anime Warrior Character Boy Girl Cyberpunk";
+            else if (catName === 'animals') seoKeyword = "Mythical Creature Wild Animal Neon Fantasy";
+            else if (catName === 'love') seoKeyword = "Romantic Couple Love Family Cute Creative";
+            else if (catName === 'events') seoKeyword = "Indian Festival Patriotic Celebration Happy";
+            else if (catName === 'nature') seoKeyword = "Nature Landscape Flower Feather Aesthetic";
+            else if (catName === 'food') seoKeyword = "Delicious Food Drinks Dessert Creative Art";
+            else if (catName === 'weapons') seoKeyword = "Fantasy Weapon Sword Shield Magical 3D";
+            else if (catName === 'places') seoKeyword = "Architecture Beautiful Places Travel Scenery";
+            else if (catName === 'abstract') seoKeyword = "Abstract 3D Bottle Design Neon Art";
+            break;
+        }
+    }
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.onclick = () => openModal(num); // ध्यान दें: जावास्क्रिप्ट में 'onclick' छोटा होता है (c छोटा रहेगा)
+    
+    card.innerHTML = `
+        <img src="${IMAGE_BASE_URL}${num}.webp" alt="${seoKeyword} Wallpaper Number ${num}" title="${seoKeyword} Wallpaper" loading="lazy">
+        <div class="card-info">
+            <p class="card-title">Wallpaper ${num}</p>
+        </div>
+    `;
+    galleryGrid.appendChild(card);
+});
+        
 
         updatePaginationControls(currentFilteredList.length);
     }
