@@ -1228,42 +1228,36 @@ function filterImages() {
 }
 
     // डाउनलोड बटन को 100% वर्किंग बनाने के लिए Modal ओपन फंक्शन
-    
-    // 1. MONETAG DASHBOARD SE MILA SMARTLINK/DIRECT LINK INVERTED COMMA KE ANDAR DALEIN
+    // 1. MONETAG SMARTLINK
 const HIGH_EARNING_SMARTLINK = "https://omg10.com/4/11655267"; 
 
-// 2. MODAL OPENING FUNCTION (Line 1231 par paste karein)
+// 2. FINAL CORRECTED MODAL FUNCTION (Line 1231 par isse replace karein)
 function openModal(num) {
-    // Original image url setup
     const fileUrl = `${IMAGE_BASE_URL}${num}.webp`;
     modalImg.src = fileUrl;
 
-    // Default download button state (Pehle user ko click karne ka option dikhega)
+    // Button ka default text set karein
     downloadBtn.innerHTML = "⚡ Start High-Speed Download (Free)";
-    
-    // Purane click events ko clear karne ke liye clone banayein
-    const newDownloadBtn = downloadBtn.cloneNode(true);
-    downloadBtn.parentNode.replaceChild(newDownloadBtn, downloadBtn);
-    
-    // Global reference update karein taaki closeModal ya baki functions me dikkat na ho
-    downloadBtn = newDownloadBtn;
+    downloadBtn.style.pointerEvents = "auto"; 
+    downloadBtn.style.opacity = "1";
 
-    // Jab user download button dabayega, tab high-earning timer shuru hoga
+    // Puraane click events ko har baar naye number ke liye fresh karne ka safe tarika
     downloadBtn.onclick = (e) => {
         e.preventDefault();
         
-        // 🔥 HIGH PAYOUT TRIGGER: Click karte hi background mein direct link activate hogi
+        // 🔥 HIGH PAYOUT TRIGGER: Click karte hi background mein direct link khulegi
         let adWindow = window.open(HIGH_EARNING_SMARTLINK, '_blank');
         if (adWindow) {
             adWindow.blur(); 
-            window.focus(); // User aapki premium website par hi bana rahega
+            window.focus(); 
         }
 
-        let timeLeft = 10; // 10 Second ka countdown timer high CPM ke liye
+        let timeLeft = 10; // 10 Second ka counter
         
-        // Button ke andar hi live counter dikhana shuru karein
-        downloadBtn.innerHTML = `🎬 Verifying Premium Ad Stream... <span id="adCountdown" style="font-size:18px; font-weight:800; color:#c084fc; margin-left:5px;">10</span>s`;
-        downloadBtn.style.pointerEvents = "none"; // Timer chalte samay baar-baar click block karne ke liye
+        // Live timer show karein
+        downloadBtn.innerHTML = `🎬 Verifying Link... <span id="adCountdown" style="font-size:16px; font-weight:800; color:#c084fc; margin-left:5px;">10</span>s`;
+        downloadBtn.style.pointerEvents = "none"; // Timer ke beech click block
+        downloadBtn.style.opacity = "0.7";
 
         const adTimer = setInterval(() => {
             timeLeft--;
@@ -1272,11 +1266,11 @@ function openModal(num) {
                 countdownDisplay.textContent = timeLeft;
             }
 
-            // 10 second poore hote hi automatic force download shuru
+            // Time khatam hone par download
             if (timeLeft <= 0) {
                 clearInterval(adTimer);
                 
-                // Aapka original mobile-friendly blob automatic download code
+                // Aapka original mobile-friendly blob download code
                 fetch(fileUrl)
                     .then(response => response.blob())
                     .then(blob => {
@@ -1289,14 +1283,15 @@ function openModal(num) {
                         document.body.removeChild(tempAnchor);
                         URL.revokeObjectURL(blobUrl);
 
-                        // Success state update
                         downloadBtn.innerHTML = `✅ Download Finished!`;
                         downloadBtn.style.pointerEvents = "auto";
+                        downloadBtn.style.opacity = "1";
                     })
                     .catch(err => {
                         window.open(fileUrl, '_blank');
                         downloadBtn.innerHTML = `✅ Download Finished!`;
                         downloadBtn.style.pointerEvents = "auto";
+                        downloadBtn.style.opacity = "1";
                     });
             }
         }, 1000);
