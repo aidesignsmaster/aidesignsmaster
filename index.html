@@ -1228,29 +1228,80 @@ function filterImages() {
 }
 
     // डाउनलोड बटन को 100% वर्किंग बनाने के लिए Modal ओपन फंक्शन
-    function openModal(num) {
+    
+    // 1. MONETAG DASHBOARD SE MILA SMARTLINK/DIRECT LINK INVERTED COMMA KE ANDAR DALEIN
+const HIGH_EARNING_SMARTLINK = "https://your-monetag-smartlink-com/xxxxxx"; 
+
+// 2. MODAL OPENING FUNCTION (Line 1231 par paste karein)
+function openModal(num) {
+    // Original image url setup
     const fileUrl = `${IMAGE_BASE_URL}${num}.webp`;
     modalImg.src = fileUrl;
+
+    // Default download button state (Pehle user ko click karne ka option dikhega)
+    downloadBtn.innerHTML = "⚡ Start High-Speed Download (Free)";
     
-    // डाउनलोड बटन को डायरेक्ट फ़ोन में सेव करने के लिए मजबूर करने वाला कोड
+    // Purane click events ko clear karne ke liye clone banayein
+    const newDownloadBtn = downloadBtn.cloneNode(true);
+    downloadBtn.parentNode.replaceChild(newDownloadBtn, downloadBtn);
+    
+    // Global reference update karein taaki closeModal ya baki functions me dikkat na ho
+    downloadBtn = newDownloadBtn;
+
+    // Jab user download button dabayega, tab high-earning timer shuru hoga
     downloadBtn.onclick = (e) => {
-        e.preventDefault(); 
-        fetch(fileUrl)
-            .then(response => response.blob())
-            .then(blob => {
-                const blobURL = URL.createObjectURL(blob);
-                const tempAnchor = document.createElement('a');
-                tempAnchor.href = blobURL;
-                tempAnchor.setAttribute('download', `Wallpaper-${num}.webp`);
-                document.body.appendChild(tempAnchor);
-                tempAnchor.click();
-                document.body.removeChild(tempAnchor);
-                URL.revokeObjectURL(blobURL);
-            })
-            .catch(err => {
-                window.open(fileUrl, '_blank');
-            });
+        e.preventDefault();
+        
+        // 🔥 HIGH PAYOUT TRIGGER: Click karte hi background mein direct link activate hogi
+        let adWindow = window.open(HIGH_EARNING_SMARTLINK, '_blank');
+        if (adWindow) {
+            adWindow.blur(); 
+            window.focus(); // User aapki premium website par hi bana rahega
+        }
+
+        let timeLeft = 10; // 10 Second ka countdown timer high CPM ke liye
+        
+        // Button ke andar hi live counter dikhana shuru karein
+        downloadBtn.innerHTML = `🎬 Verifying Premium Ad Stream... <span id="adCountdown" style="font-size:18px; font-weight:800; color:#c084fc; margin-left:5px;">10</span>s`;
+        downloadBtn.style.pointerEvents = "none"; // Timer chalte samay baar-baar click block karne ke liye
+
+        const adTimer = setInterval(() => {
+            timeLeft--;
+            const countdownDisplay = document.getElementById('adCountdown');
+            if (countdownDisplay) {
+                countdownDisplay.textContent = timeLeft;
+            }
+
+            // 10 second poore hote hi automatic force download shuru
+            if (timeLeft <= 0) {
+                clearInterval(adTimer);
+                
+                // Aapka original mobile-friendly blob automatic download code
+                fetch(fileUrl)
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const blobUrl = URL.createObjectURL(blob);
+                        const tempAnchor = document.createElement('a');
+                        tempAnchor.href = blobUrl;
+                        tempAnchor.setAttribute('download', `Wallpaper-${num}.webp`);
+                        document.body.appendChild(tempAnchor);
+                        tempAnchor.click();
+                        document.body.removeChild(tempAnchor);
+                        URL.revokeObjectURL(blobUrl);
+
+                        // Success state update
+                        downloadBtn.innerHTML = `✅ Download Finished!`;
+                        downloadBtn.style.pointerEvents = "auto";
+                    })
+                    .catch(err => {
+                        window.open(fileUrl, '_blank');
+                        downloadBtn.innerHTML = `✅ Download Finished!`;
+                        downloadBtn.style.pointerEvents = "auto";
+                    });
+            }
+        }, 1000);
     };
+}
     
     modal.classList.add('active');
     }
