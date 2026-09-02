@@ -1227,75 +1227,32 @@ function filterImages() {
     loadGallery();
 }
 
-    // 1. MONETAG SMARTLINK
-const HIGH_EARNING_SMARTLINK = "https://omg10.com/4/11655267"; 
-
-// 2. FINAL CORRECTED MODAL FUNCTION (Line 1231 par isse replace karein)
+  // // डाउनलोड बटन को 100% वर्किंग बनाने के लिए Modal ओपन फक्शन
 function openModal(num) {
-    const fileUrl = `${IMAGE_BASE_URL}${num}.webp`;
-    modalImg.src = fileUrl;
+   const fileUrl = `${IMAGE_BASE_URL}${num}.webp`;
+   modalImg.src = fileUrl;
 
-    // Button ka default text set karein
-    downloadBtn.innerHTML = "⚡ Start High-Speed Download (Free)";
-    downloadBtn.style.pointerEvents = "auto"; 
-    downloadBtn.style.opacity = "1";
-
-    // Puraane click events ko har baar naye number ke liye fresh karne ka safe tarika
-    downloadBtn.onclick = (e) => {
-        e.preventDefault();
-        
-        // 🔥 HIGH PAYOUT TRIGGER: Click karte hi background mein direct link khulegi
-        let adWindow = window.open(HIGH_EARNING_SMARTLINK, '_blank');
-        if (adWindow) {
-            adWindow.blur(); 
-            window.focus(); 
-        }
-
-        let timeLeft = 10; // 10 Second ka counter
-        
-        // Live timer show karein
-        downloadBtn.innerHTML = `🎬 Verifying Link... <span id="adCountdown" style="font-size:16px; font-weight:800; color:#c084fc; margin-left:5px;">10</span>s`;
-        downloadBtn.style.pointerEvents = "none"; // Timer ke beech click block
-        downloadBtn.style.opacity = "0.7";
-
-        const adTimer = setInterval(() => {
-            timeLeft--;
-            const countdownDisplay = document.getElementById('adCountdown');
-            if (countdownDisplay) {
-                countdownDisplay.textContent = timeLeft;
-            }
-
-            // Time khatam hone par download
-            if (timeLeft <= 0) {
-                clearInterval(adTimer);
-                
-                // Aapka original mobile-friendly blob download code
-                fetch(fileUrl)
-                    .then(response => response.blob())
-                    .then(blob => {
-                        const blobUrl = URL.createObjectURL(blob);
-                        const tempAnchor = document.createElement('a');
-                        tempAnchor.href = blobUrl;
-                        tempAnchor.setAttribute('download', `Wallpaper-${num}.webp`);
-                        document.body.appendChild(tempAnchor);
-                        tempAnchor.click();
-                        document.body.removeChild(tempAnchor);
-                        URL.revokeObjectURL(blobUrl);
-
-                        downloadBtn.innerHTML = `✅ Download Finished!`;
-                        downloadBtn.style.pointerEvents = "auto";
-                        downloadBtn.style.opacity = "1";
-                    })
-                    .catch(err => {
-                        window.open(fileUrl, '_blank');
-                        downloadBtn.innerHTML = `✅ Download Finished!`;
-                        downloadBtn.style.pointerEvents = "auto";
-                        downloadBtn.style.opacity = "1";
-                    });
-            }
-        }, 1000);
-    };
+   // // डाउनलोड बटन को डायरेक्ट फोन में सेव करने के लिए मजबूर करने वाला कोड
+   downloadBtn.onclick = (e) => {
+      e.preventDefault();
+      fetch(fileUrl)
+         .then(response => response.blob())
+         .then(blob => {
+            const blobUrl = URL.createObjectURL(blob);
+            const tempAnchor = document.createElement('a');
+            tempAnchor.href = blobUrl;
+            tempAnchor.setAttribute('download', `Wallpaper-${num}.webp`);
+            document.body.appendChild(tempAnchor);
+            tempAnchor.click();
+            document.body.removeChild(tempAnchor);
+            URL.revokeObjectURL(blobUrl);
+         })
+         .catch(err => {
+            window.open(fileUrl, '_blank');
+         });
+   };
 }
+    
     
     modal.classList.add('active');
     }
