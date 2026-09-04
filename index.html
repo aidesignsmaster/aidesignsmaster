@@ -4,1981 +4,640 @@
     <meta name="p:domain_verify" content="58051de39b9d3361d7c2f279741308d7"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Designs Master Gallery</title>
+    <title>AI Designs Master | 4K HD Wallpapers & Free Image Tools</title>
+    <meta name="description" content="Explore premium AI wallpapers and collection of free image tools including compressor, resizer, and converter.">
+    <meta name="keywords" content="AI Wallpapers, Image Compressor, Image Resizer, Image Converter, 4K HD Backgrounds">
+
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8G185SNCZP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8G185SNCZP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-8G185SNCZP');
-</script>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+      gtag('config', 'G-8G185SNCZP');
+    </script>
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Outfit', Arial, sans-serif;
-    background:
-        radial-gradient(circle at 10% 10%, rgba(88, 101, 242, 0.16), transparent 28%),
-        radial-gradient(circle at 90% 20%, rgba(0, 210, 255, 0.12), transparent 25%),
-        radial-gradient(circle at 50% 90%, rgba(147, 51, 234, 0.12), transparent 30%),
-        #070b14;
-    color: #ffffff;
-    margin: 0;
-    min-height: 100vh;
-    text-align: center;
-    overflow-x: hidden;
-}
-
-/* Background glow */
-body::before {
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: rgba(96, 165, 250, 0.08);
-    filter: blur(120px);
-    border-radius: 50%;
-    top: -200px;
-    left: -200px;
-    z-index: -1;
-    pointer-events: none;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: rgba(168, 85, 247, 0.08);
-    filter: blur(120px);
-    border-radius: 50%;
-    bottom: -200px;
-    right: -200px;
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* ================= HEADER ================= */
-
-header {
-    width: min(1100px, calc(100% - 30px));
-    margin: 28px auto 38px;
-    padding: 38px 25px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 28px;
-    background: rgba(18, 25, 39, 0.68);
-    border: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow:
-        0 25px 70px rgba(0,0,0,0.35),
-        inset 0 1px 0 rgba(255,255,255,0.05);
-}
-
-header::before {
-    content: "";
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(59,130,246,0.22), transparent 65%);
-    top: -180px;
-    left: -100px;
-    pointer-events: none;
-}
-
-header::after {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(168,85,247,0.18), transparent 65%);
-    bottom: -180px;
-    right: -100px;
-    pointer-events: none;
-}
-
-h1 {
-    position: relative;
-    z-index: 2;
-    font-size: clamp(28px, 5vw, 48px);
-    font-weight: 800;
-    letter-spacing: -1.5px;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, #ffffff, #9ecbff 45%, #d8b4fe);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 35px rgba(96,165,250,0.18);
-}
-
-h1::after {
-    content: "Premium AI Wallpaper Collection";
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #8493a9;
-    background: none;
-    -webkit-text-fill-color: #8493a9;
-}
-
-/* ================= SEARCH ================= */
-
-.search-container {
-    position: relative;
-    z-index: 2;
-    max-width: 580px;
-    margin: 28px auto 0;
-}
-
-.search-container::before {
-    content: "⌕";
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 25px;
-    color: #8ea0b8;
-    z-index: 3;
-}
-
-.search-bar {
-    width: 100%;
-    height: 58px;
-    padding: 0 20px 0 55px;
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.09);
-    outline: none;
-    color: white;
-    background: rgba(5, 10, 18, 0.65);
-    font-family: inherit;
-    font-size: 16px;
-    box-shadow:
-        inset 0 1px 8px rgba(0,0,0,0.2),
-        0 10px 35px rgba(0,0,0,0.18);
-    transition: 0.3s ease;
-}
-
-.search-bar::placeholder {
-    color: #718096;
-}
-
-.search-bar:hover {
-    border-color: rgba(147,197,253,0.25);
-}
-
-.search-bar:focus {
-    border-color: #60a5fa;
-    box-shadow:
-        0 0 0 4px rgba(96,165,250,0.12),
-        0 12px 40px rgba(0,0,0,0.25);
-}
-
-/* ================= GALLERY ================= */
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    gap: 20px;
-    width: min(1300px, calc(100% - 30px));
-    margin: 0 auto;
-    padding: 0;
-}
-
-.card {
-    position: relative;
-    background: rgba(18, 25, 39, 0.75);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 20px;
-    padding: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    text-align: left;
-    box-shadow:
-        0 12px 35px rgba(0,0,0,0.22),
-        inset 0 1px 0 rgba(255,255,255,0.04);
-    transition:
-        transform 0.35s cubic-bezier(.2,.8,.2,1),
-        border-color 0.35s,
-        box-shadow 0.35s;
-}
-
-.card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(
-        135deg,
-        rgba(96,165,250,0.16),
-        transparent 35%,
-        transparent 70%,
-        rgba(168,85,247,0.12)
-    );
-    opacity: 0;
-    transition: 0.35s;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(147,197,253,0.35);
-    box-shadow:
-        0 25px 50px rgba(0,0,0,0.38),
-        0 0 30px rgba(59,130,246,0.08);
-}
-
-.card:hover::before {
-    opacity: 1;
-}
-
-.card img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    border-radius: 14px;
-    background: #0d1117;
-    transition: transform 0.5s ease;
-}
-
-.card:hover img {
-    transform: scale(1.05);
-}
-
-.card-info {
-    position: relative;
-    z-index: 3;
-    padding: 12px 8px 7px;
-    margin: 0;
-}
-
-.card-info p,
-.card-title {
-    margin: 0;
-    color: #d7e0ec;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-}
-
-/* ================= PAGINATION ================= */
-
-.pagination-container {
-    width: min(600px, calc(100% - 30px));
-    margin: 45px auto 30px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    border-radius: 18px;
-    background: rgba(18,25,39,0.6);
-    border: 1px solid rgba(255,255,255,0.06);
-    backdrop-filter: blur(15px);
-}
-
-.btn-page {
-    min-height: 46px;
-    padding: 0 20px;
-    border-radius: 13px;
-    border: 1px solid rgba(255,255,255,0.09);
-    color: #dce7f4;
-    background: rgba(255,255,255,0.04);
-    font-family: inherit;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.25s;
-}
-
-.btn-page:hover:not(:disabled) {
-    color: white;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
-    border-color: transparent;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(37,99,235,0.25);
-}
-
-.btn-page:disabled {
-    opacity: 0.35;
-    cursor: not-allowed;
-}
-
-#pageInfo {
-    min-width: 115px;
-    color: #aab8ca;
-    font-size: 14px;
-    font-weight: 600;
-}
-    .page-search {
-    width: 70px;
-    height: 46px;
-    border-radius: 13px;
-    border: 1px solid rgba(255,255,255,0.09);
-    background: rgba(255,255,255,0.04);
-    color: white;
-    text-align: center;
-    font-family: inherit;
-    font-size: 14px;
-    outline: none;
-}
-
-.page-search:focus {
-    border-color: #60a5fa;
-}
-
-.page-go {
-    height: 46px;
-    padding: 0 15px;
-    border: none;
-    border-radius: 13px;
-    color: white;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
-    font-family: inherit;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-/* ================= MODAL ================= */
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    padding: 20px;
-    background: rgba(2, 5, 10, 0.86);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal.active {
-    display: flex;
-    animation: fadeIn 0.25s ease;
-}
-
-.modal-content {
-    width: min(850px, 100%);
-    max-height: 94vh;
-    padding: 15px;
-    border-radius: 25px;
-    background: rgba(18,25,39,0.9);
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 30px 100px rgba(0,0,0,0.6);
-    overflow: auto;
-}
-
-.modal-content img {
-    display: block;
-    max-width: 100%;
-    max-height: 72vh;
-    margin: auto;
-    border-radius: 17px;
-    box-shadow: 0 15px 45px rgba(0,0,0,0.4);
-}
-
-.btn-container {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
-
-.btn-download,
-.btn-close {
-    min-height: 48px;
-    padding: 0 24px;
-    border-radius: 13px;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 14px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.25s;
-}
-
-.btn-download {
-    color: white;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
-    box-shadow: 0 10px 25px rgba(37,99,235,0.25);
-}
-
-.btn-download:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(37,99,235,0.35);
-}
-
-.btn-close {
-    color: #ffb4b4;
-    background: rgba(239,68,68,0.1);
-    border: 1px solid rgba(239,68,68,0.2);
-}
-
-.btn-close:hover {
-    color: white;
-    background: #dc2626;
-}
-
-/* ================= NO RESULT ================= */
-
-.gallery-grid > p {
-    padding: 60px 20px;
-    color: #8493a9 !important;
-    font-size: 18px;
-}
-
-/* ================= ANIMATION ================= */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.98);
+    <!-- Google Search Console Structured Data (Schema.org) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "AI Designs Master Gallery",
+      "description": "Premium 4K HD AI Wallpapers Collection and Free Image Utilities",
+      "url": "https://aidesignsmaster.github.io"
     }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+    </script>
 
-/* ================= MOBILE ================= */
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
 
-/* ================= BRAND & HERO ================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-.brand-badge {
-    position: relative;
-    z-index: 2;
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 15px;
-    margin-bottom: 15px;
-    border-radius: 999px;
-    color: #9ecbff;
-    background: rgba(96,165,250,0.08);
-    border: 1px solid rgba(96,165,250,0.18);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.hero-text {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-    margin: 0 auto;
-    color: #8998ad;
-    font-size: 15px;
-    line-height: 1.7;
-}
-    
-/* ================= MOBILE ================= */
+        body {
+            font-family: 'Outfit', Arial, sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(88, 101, 242, 0.16), transparent 28%),
+                radial-gradient(circle at 90% 20%, rgba(0, 210, 255, 0.12), transparent 25%),
+                radial-gradient(circle at 50% 90%, rgba(147, 51, 234, 0.12), transparent 30%),
+                #070b14;
+            color: #ffffff;
+            margin: 0;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+        }
 
-@media (max-width: 600px) {
+        /* HEADER */
+        header {
+            width: min(1100px, calc(100% - 30px));
+            margin: 28px auto 20px;
+            padding: 38px 25px;
+            position: relative;
+            border-radius: 28px;
+            background: rgba(18, 25, 39, 0.68);
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+        }
 
-    body {
-        padding: 0;
-    }
+        .brand-badge {
+            display: inline-flex;
+            padding: 6px 14px;
+            margin-bottom: 12px;
+            border-radius: 999px;
+            color: #9ecbff;
+            background: rgba(96,165,250,0.08);
+            border: 1px solid rgba(96,165,250,0.18);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
 
-    header {
-        width: calc(100% - 20px);
-        margin: 10px auto 28px;
-        padding: 30px 15px;
-        border-radius: 22px;
-    }
+        h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #9ecbff 45%, #d8b4fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
-    .brand-badge {
-        font-size: 9px;
-        letter-spacing: 1.5px;
-        padding: 7px 12px;
-        margin-bottom: 12px;
-    }
+        .hero-text {
+            color: #8998ad;
+            font-size: 14px;
+            margin-top: 8px;
+        }
 
-    h1 {
-        font-size: 29px;
-    }
+        /* SEARCH BAR */
+        .search-container {
+            position: relative;
+            max-width: 580px;
+            margin: 20px auto 0;
+        }
 
-    h1::after {
-        font-size: 10px;
-        letter-spacing: 1.5px;
-    }
+        .search-bar {
+            width: 100%;
+            height: 54px;
+            padding: 0 20px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.1);
+            outline: none;
+            color: white;
+            background: rgba(5, 10, 18, 0.65);
+            font-size: 16px;
+        }
 
-    .hero-text {
-        font-size: 13px;
-        line-height: 1.6;
-        padding: 0 8px;
-    }
+        /* CATEGORY BUTTONS */
+        .category-container {
+            width: min(1000px, calc(100% - 30px));
+            margin: 25px auto 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
 
-    .gallery-grid {
-        width: calc(100% - 20px);
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-    }
+        .category-btn {
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            color: #dce7f4;
+            cursor: pointer;
+            transition: 0.25s;
+        }
 
-    .card {
-        padding: 5px;
-        border-radius: 14px;
-    }
+        .category-btn.active, .category-btn:hover {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            border-color: transparent;
+        }
 
-    .card img {
-        border-radius: 10px;
-    }
+        /* IMAGE TOOLS SECTION */
+        .tools-wrapper {
+            width: min(1000px, calc(100% - 30px));
+            margin: 0 auto 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-    .card-info {
-        padding: 9px 5px 5px;
-    }
+        .tool-box {
+            background: rgba(18, 25, 39, 0.75);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 22px;
+            text-align: center;
+        }
 
-    .card-info p,
-    .card-title {
-        font-size: 11px;
-    }
+        .tool-box h2 {
+            font-size: 20px;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
 
-    .pagination-container {
-        width: calc(100% - 20px);
-        gap: 6px;
-        margin-top: 30px;
-        padding: 7px;
-    }
+        .tool-box p {
+            color: #8998ad;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
 
-    .btn-page {
-        padding: 0 10px;
-        font-size: 12px;
-    }
+        .tool-inputs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            align-items: center;
+        }
 
-    #pageInfo {
-        min-width: 85px;
-        font-size: 11px;
-    }
+        .tool-inputs input[type="file"],
+        .tool-inputs input[type="number"] {
+            background: rgba(5, 10, 18, 0.65);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            outline: none;
+        }
 
-    .modal {
-        padding: 10px;
-    }
+        .btn-action {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s;
+        }
 
-    .modal-content {
-        padding: 10px;
-        border-radius: 18px;
-    }
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+        }
 
-    .btn-download,
-    .btn-close {
-        padding: 0 16px;
-        min-height: 45px;
-        font-size: 12px;
-    }
-}
-    .converter-box {
-    width: min(600px, calc(100% - 30px));
-    margin: 40px auto;
-    padding: 30px 20px;
-    border-radius: 22px;
-    background: rgba(18, 25, 39, 0.75);
-    border: 1px solid rgba(255,255,255,0.08);
-}
+        /* GALLERY GRID */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 20px;
+            width: min(1300px, calc(100% - 30px));
+            margin: 0 auto;
+        }
 
-.converter-box h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
+        .card {
+            background: rgba(18, 25, 39, 0.75);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 20px;
+            padding: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
 
-.converter-box p {
-    color: #8998ad;
-    margin-bottom: 20px;
-}
+        .card:hover { transform: translateY(-8px); }
 
-.converter-input {
-    width: 100%;
-    padding: 12px;
-    color: white;
-    margin-bottom: 15px;
-}
+        .card img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 14px;
+            background: #0d1117;
+        }
 
-.converter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
+        .card-info { padding: 10px 5px 5px; text-align: left; }
+        .card-title { color: #d7e0ec; font-size: 14px; font-weight: 600; }
 
-.convert-btn {
-    padding: 12px 18px;
-    border: none;
-    border-radius: 12px;
-    color: white;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
-    font-family: inherit;
-    font-weight: 600;
-    cursor: pointer;
-}
-    /* ================= CATEGORY BUTTONS ================= */
+        /* PAGINATION */
+        .pagination-container {
+            width: min(600px, calc(100% - 30px));
+            margin: 40px auto;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 18px;
+            background: rgba(18,25,39,0.6);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
 
-.category-container {
-    position: relative;
-    z-index: 2;
-    width: min(1000px, calc(100% - 30px));
-    margin: 25px auto 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
+        .btn-page, .page-go {
+            padding: 10px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            color: white;
+            cursor: pointer;
+        }
 
-.category-btn {
-    padding: 11px 16px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.10);
-    background: rgba(255,255,255,0.05);
-    color: #dce7f4;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.25s ease;
-}
+        .page-search {
+            width: 60px;
+            height: 38px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.3);
+            color: white;
+            text-align: center;
+        }
 
-.category-btn:hover,
-.category-btn.active {
-    color: #ffffff;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
-    border-color: transparent;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(37,99,235,0.25);
-}
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 5, 10, 0.88);
+            backdrop-filter: blur(15px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
 
-@media (max-width: 600px) {
-    .category-container {
-        width: calc(100% - 20px);
-        gap: 7px;
-    }
+        .modal.active { display: flex; }
 
-    .category-btn {
-        padding: 9px 11px;
-        font-size: 10px;
-    }
-}
+        .modal-content {
+            width: min(850px, 90%);
+            max-height: 90vh;
+            padding: 20px;
+            border-radius: 20px;
+            background: rgba(18,25,39,0.95);
+        }
 
-</style>
+        .modal-content img {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 14px;
+        }
+
+        .btn-container { margin-top: 15px; display: flex; justify-content: center; gap: 15px; }
+        .btn-download {
+            padding: 10px 24px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn-close {
+            padding: 10px 20px;
+            border-radius: 12px;
+            background: rgba(239, 68, 68, 0.2);
+            color: #ffb4b4;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .tool-inputs { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
-<header>
-    <div class="brand-badge">✦ AI DESIGNS MASTER</div>
 
-    <h1>Discover Amazing AI Designs</h1>
+    <header>
+        <span class="brand-badge">✨ AI DESIGNS MASTER</span>
+        <h1>Discover Amazing AI Designs</h1>
+        <p class="hero-text">Explore a premium collection of beautiful AI wallpapers and creative designs.</p>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Search wallpaper number...">
+        </div>
+    </header>
 
-    <p class="hero-text">
-        Explore a premium collection of beautiful AI wallpapers and creative designs.
-    </p>
-
-    <div class="search-container">
-        <input
-            type="text"
-            id="searchBar"
-            class="search-bar"
-            placeholder="Search wallpaper number..."
-            oninput="filterImages()"
-            autocomplete="off"
-        >
+    <!-- CATEGORIES -->
+    <div class="category-container" id="categoryContainer">
+        <button class="category-btn active" onclick="filterCategory('all', this)">All Designs</button>
+        <button class="category-btn" onclick="filterCategory('gods', this)">🛕 Indian Gods</button>
+        <button class="category-btn" onclick="filterCategory('characters', this)">⚔️ Characters</button>
+        <button class="category-btn" onclick="filterCategory('animals', this)">🦁 Animals</button>
+        <button class="category-btn" onclick="filterCategory('love', this)">❤️ Love & Family</button>
+        <button class="category-btn" onclick="filterCategory('events', this)">🎉 Festivals & Events</button>
+        <button class="category-btn" onclick="filterCategory('nature', this)">🌸 Nature</button>
+        <button class="category-btn" onclick="filterCategory('food', this)">🍕 Food & Drinks</button>
+        <button class="category-btn" onclick="filterCategory('weapons', this)">🛡️ Fantasy Weapons</button>
+        <button class="category-btn" onclick="filterCategory('places', this)">🏛️ Places</button>
+        <button class="category-btn" onclick="filterCategory('abstract', this)">🎨 Abstract & 3D</button>
     </div>
-    <!-- CATEGORY BUTTONS -->
-<div class="category-container">
 
-    <button class="category-btn active"
-        onclick="selectCategory('all', this)">
-        All Designs
-    </button>
+    <!-- 3 IMAGE UTILITY TOOLS -->
+    <div class="tools-wrapper">
+        <!-- Image Compressor -->
+        <div class="tool-box">
+            <h2>Image Compressor</h2>
+            <p>Upload up to 50 images and compress them as JPG, PNG or WEBP.</p>
+            <div class="tool-inputs">
+                <input type="file" multiple accept="image/*">
+                <button class="btn-action">Compress JPG</button>
+                <button class="btn-action">Compress PNG</button>
+                <button class="btn-action">Compress WEBP</button>
+            </div>
+        </div>
 
-    <button class="category-btn"
-        onclick="selectCategory('gods', this)">
-        🕉️ Indian Gods
-    </button>
+        <!-- Image Resizer -->
+        <div class="tool-box">
+            <h2>Image Resizer</h2>
+            <p>Upload an image and set a new size.</p>
+            <div class="tool-inputs">
+                <input type="file" accept="image/*">
+                <input type="number" placeholder="Width (px)">
+                <input type="number" placeholder="Height (px)">
+                <button class="btn-action">Resize Image</button>
+            </div>
+        </div>
 
-    <button class="category-btn"
-        onclick="selectCategory('characters', this)">
-        🦸 Characters
-    </button>
-
-    <button class="category-btn"
-        onclick="selectCategory('animals', this)">
-        🦁 Animals
-    </button>
-
-    <button class="category-btn"
-        onclick="selectCategory('love', this)">
-        ❤️ Love & Family
-    </button>
-
-    <button class="category-btn"
-        onclick="selectCategory('events', this)">
-        🪔 Festivals & Events
-    </button>
-
-    <button class="category-btn"
-        onclick="selectCategory('nature', this)">
-        🌸 Nature
-    </button>
-
-    <button class="category-btn"
-        onclick="selectCategory('food', this)">
-        🍕 Food & Drinks
-    </button>
-
-    <button class="category-btn"
-        onclick="selectCategory('weapons', this)">
-        🛡️ Fantasy Weapons
-    </button>
-
-    <button class="category-btn"
-        onclick="selectCategory('places', this)">
-        🏙️ Places
-    </button>
-
-    <button class="category-btn"
-        onclick="selectCategory('abstract', this)">
-        🎨 Abstract & 3D
-    </button>
-
-</div>
-</header>
-
-    <!-- इमेजेस यहाँ लोड होंगी -->
-    <main class="gallery-grid" id="galleryGrid"></main>
-   <!-- IMAGE COMPRESSOR -->
-<div class="converter-box">
-    <h2>Image Compressor</h2>
-
-    <p>
-        Upload up to 50 images and compress them as JPG, PNG or WEBP.
-    </p>
-
-    <input
-        type="file"
-        id="compressUpload"
-        accept="image/*"
-        multiple
-        class="converter-input"
-        style="margin-bottom: 15px; color: white;"
-    >
-
-    <div class="converter-buttons">
-
-        <button onclick="compressImage('image/jpeg')" class="convert-btn">
-            Compress JPG
-        </button>
-
-        <button onclick="compressImage('image/png')" class="convert-btn">
-            Compress PNG
-        </button>
-
-        <button onclick="compressImage('image/webp')" class="convert-btn">
-            Compress WEBP
-        </button>
-
+        <!-- Image Converter -->
+        <div class="tool-box">
+            <h2>Image Converter</h2>
+            <p>Upload up to 50 images and convert them to JPG, PNG or WEBP.</p>
+            <div class="tool-inputs">
+                <input type="file" multiple accept="image/*">
+                <button class="btn-action">Convert to JPG</button>
+                <button class="btn-action">Convert to PNG</button>
+                <button class="btn-action">Convert to WEBP</button>
+            </div>
+        </div>
     </div>
-</div> 
-<!-- IMAGE RESIZER -->
-<div class="converter-box">
-    <h2>Image Resizer</h2>
-    <p>Upload an image and set a new size.</p>
 
-    <input type="file" id="resizeUpload" accept="image/*" class="converter-input">
+    <!-- MAIN WALLPAPER GALLERY GRID -->
+    <div class="gallery-grid" id="galleryGrid"></div>
 
-    <input type="number" id="resizeWidth" placeholder="Width (px)"
-        class="converter-input" style="color: black !important;">
-
-    <input type="number" id="resizeHeight" placeholder="Height (px)"
-        class="converter-input" style="color: black !important;">
-
-    <div class="converter-buttons">
-        <button onclick="resizeImage()" class="convert-btn">
-            Resize Image
-        </button>
-    </div>
-</div>
-
-
-<!-- IMAGE CONVERTER -->
-<div class="converter-box">
-    <h2>Image Converter</h2>
-
-    <p>Upload up to 50 images and convert them to JPG, PNG or WEBP.</p>
-
-    <input type="file" id="imageUpload" accept="image/*"
-        multiple class="converter-input">
-
-    <div class="converter-buttons">
-
-        <button onclick="convertImage('image/jpeg')" class="convert-btn">
-            Convert to JPG
-        </button>
-
-        <button onclick="convertImage('image/png')" class="convert-btn">
-            Convert to PNG
-        </button>
-
-        <button onclick="convertImage('image/webp')" class="convert-btn">
-            Convert to WEBP
-        </button>
-
-    </div>
-</div>
-    <!-- 🌟 नया फीचर: Pagination बटन्स -->
+    <!-- PAGINATION -->
     <div class="pagination-container">
-        <input type="number" id="pageSearch" class="page-search" placeholder="Page" min="1">
-<button class="page-go" onclick="goToPage()">Go</button>
-        <button id="prevBtn" class="btn-page" onclick="changePage(-1)">⏮️ Previous</button>
+        <button class="btn-page" id="prevBtn" onclick="changePage(-1)">Previous</button>
         <span id="pageInfo">Page 1</span>
-        <button id="nextBtn" class="btn-page" onclick="changePage(1)">Next ⏭️</button>
+        <input type="number" id="pageJumpInput" class="page-search" min="1" placeholder="Page">
+        <button class="page-go" onclick="jumpToPage()">Go</button>
+        <button class="btn-page" id="nextBtn" onclick="changePage(1)">Next</button>
     </div>
 
-    <!-- Modal Box -->
+    <!-- MODAL PREVIEW -->
     <div class="modal" id="imageModal">
         <div class="modal-content">
-            <img src="" id="modalImg" alt="Preview">
+            <img id="modalImg" src="" alt="AI Wallpaper Full HD Preview" title="AI Wallpaper Full HD Preview">
             <div class="btn-container">
-                <!-- डायरेक्ट डाउनलोड करने के लिए download एट्रिब्यूट जोड़ा गया है -->
-                <a href="#" id="downloadBtn" class="btn-download" download>Download HD</a>
+                <a href="#" id="downloadBtn" class="btn-download" download target="_blank">Download HD</a>
                 <button class="btn-close" onclick="closeModal()">Close</button>
             </div>
         </div>
     </div>
 
-<script>
-    // 🔗 यहाँ अपना इमेज बेस URL डालें (IMAGE BASE URL)
-    const IMAGE_BASE_URL = "https://raw.githubusercontent.com/aidesignsmaster/aidesignsmaster.github.io/refs/heads/main/";
+    <script>
+        const IMAGE_BASE_URL = "https://raw.githubusercontent.com/aidesignsmaster/aidesignsmaster.github.io/refs/heads/main/";
 
-// ==========================================
-// 1. हर इमेज का यूनीक SEO डेटा (Alt और Title)
-// ==========================================
-const imageDetails = {
-    // --- IMAGE 1: INDIAN GODS (SHIVA) ---
-    "4087": { title: "Lord Shiva Nag Panchami Wallpaper", alt: "Lord Shiva with snake blessing on Happy Nag Panchami divine background" },
-    "4894": { title: "Lord Shiva Tandav Divine Art", alt: "Lord Shiva in cosmic tandav pose with trishul spiritual artwork" },
-    "4896": { title: "Mahadev Rudra Avatar HD Image", alt: "Lord Shiva fierce rudra avatar with long hair and third eye" },
-    "5002": { title: "Lord Shiva Meditating Cosmic Wallpaper", alt: "Bholenath sitting in deep meditation with galaxy universe background" },
-    "5003": { title: "Lord Shiva Meditation Trishul Art", alt: "Lord Shiva meditating on rock with traditional trishul and damru" },
-    "5004": { title: "Mahadev Standing on Mountain Peak", alt: "Lord Shiva standing high on snow mountain top with divine light" },
-    "5008": { title: "Lord Shiva Blessing Third Eye Open", alt: "Beautiful abstract digital art of Lord Shiva blessing with third eye visible" },
-    "5009": { title: "Bholenath Sitting on Mount Kailash", alt: "Lord Shiva sitting peacefully in meditation posture on snowy Kailash mountain" },
-    "5010": { title: "Lord Shiva Cosmic Energy Wallpaper", alt: "Mahadev surrounded by bright blue cosmic lightning and divine energy" },
-    "5012": { title: "Lord Shiva Angry Rudra Form Art", alt: "Fierce abstract digital painting of angry Lord Shiva with moon in hair" },
-    "5013": { title: "Mahadev with Trishul Standing Pose", alt: "Lord Shiva standing majestically holding trishul with lightning sky" },
-    "5014": { title: "Lord Shiva with Nandi Bull Artwork", alt: "Divine image of Lord Shiva sitting with his sacred vahana Nandi bull" },
+        // MASTER WALLPAPER LIST
+        const imageList = [
+            // 1. INDIAN GODS & MYTHOLOGY
+            "4087","4894","4896","5002","5003","5004","5008","5009","5010","5012","5013","5014",
+            "5118","5120","5126","7727","7728","7729","8011","8012","8013","8014","9650","9651",
+            "9652","9676","9677","3036","4008","4010","4011","4012","4015","4919","4020","4926",
+            "4927","5119","5121","5122","5124","5125","9655","9659","9662",
+            "3825","3826","3909","3934","4004","9656",
 
-    // --- IMAGE 2: INDIAN GODS (SHIVA & LINGAM) ---
-    "5118": { title: "Mahadev Jyotirlinga Spiritual Wallpaper", alt: "Abstract glowing Shiva lingam with face of Lord Shiva behind it" },
-    "5120": { title: "Lord Shiva Temple Ancient Art", alt: "Spiritual graphic of Lord Shiva standing in front of an ancient stone temple" },
-    "5126": { title: "Mahadev Hands Holding Cosmic Energy", alt: "Lord Shiva open hands emitting bright blue divine energy rays" },
-    "7727": { title: "Shiva Lingam Puja Ritual Background", alt: "Beautifully decorated Shiva lingam with divine light source artwork" },
-    "7728": { title: "Golden Shiva Lingam Meditation Art", alt: "Glowing golden Shiva lingam surrounded by smoke and spiritual aura" },
-    "7729": { title: "Shiva Lingam on Full Moon Night", alt: "Lord Shiva lingam under bright glowing full moon and starry sky background" },
-    "8011": { title: "Mahadev Ice Lingam Kailash Cave", alt: "Sacred ice Shiva lingam inside high altitude mountain cave digital art" },
-    "8012": { title: "Lord Shiva Green Nature Meditation", alt: "Mahadev meditating peacefully surrounded by green leaves and forest aura" },
-    "8013": { title: "Fiery Lord Shiva Aghori Art", alt: "Lord Shiva in burning orange fire background representing destruction power" },
-    "8014": { title: "Lord Shiva Blue Cosmic Aura", alt: "Spiritual portrait of Mahadev with bright blue glowing aura in deep meditation" },
-    "9650": { title: "Jai Mahakal Text Typography Art", alt: "Lord Shiva face portrait with Jai Mahakal text written in golden letters" },
-    "9651": { title: "Har Har Mahadev Lord Shiva Face", alt: "Fierce look of Mahadev with Har Har Mahadev typography in dark background" },
+            // 2. WARRIORS, CHARACTERS & HUMANS
+            "10728","10725","10729","10730","10737","10738","10740","10739","10741","10742","10743","10711","10709","10707","10710",
+            "8158","8159","8160","8161","8162","8263","8264","8265","8266","8267","8268",
+            "8269","8270","8271","8373","8626","9369","9370","9373","9374","9375","9378",
+            "9379","10174","10467","10468","10469","10470","10471","10472","10473","10474","10475","10476","10477","10478","10479",
+            "4045","8068","8069","8070","8071","8072",
+            "8880","8881","8882","8883","8884",
+            "8624","8625","8627","8628",
+            "10201","10202","10219","10221","10222","10224","10233","10234","10235","10236",
+            "10237","10238","10239","10259","10260",
+            "4054",
 
-    // --- IMAGE 3: SHIVA, SHIVA LINGAM & BAL HANUMAN ---
-    "9657": { title: "Har Har Mahadev Glowing Portrait", alt: "Detailed face artwork of Lord Shiva with golden lighting and holy text" },
-    "9658": { title: "Lord Shiva Angry Face Painting", alt: "Dark abstract portrait of angry Mahadev with dynamic brush strokes" },
-    "9677": { title: "Metallic Shiva Lingam Modern Graphic", alt: "Minimalist metallic style Shiva lingam design floating in dark space" },
-    "3936": { title: "Happy Hanuman Jayanti Banner Art", alt: "Lord Hanuman holding mountain in sky with Happy Hanuman Jayanti text" },
-    "4908": { title: "Baby Hanuman Flying to Sun", alt: "Cute child Hanuman flying through clouds to catch the golden sun" },
-    "4910": { title: "Cute Bal Hanuman Floating Clouds", alt: "Adorable cartoon style baby Hanuman smiling and flying in the sky" },
-    "4911": { title: "Baby Hanuman in Magic Forest", alt: "Little Bal Hanuman sitting happily on a tree branch in fantasy jungle" },
-    "4912": { title: "Bal Hanuman Catching Sun Art", alt: "Cute baby Hanuman holding the glowing golden sun in his hands" },
-    "4915": { title: "Baby Hanuman with Laddoos Feast", alt: "Cute child Hanuman sitting next to a huge pile of golden laddoos sweets" },
-    "4919": { title: "Bal Hanuman Meeting Lord Rama", alt: "Emotional artwork of young Hanuman meeting Prince Rama in sweet childhood style" },
-    "4920": { title: "Baby Hanuman Opening His Chest", alt: "Cute Bal Hanuman showing image of Sita Rama inside his heart" },
-    "4926": { title: "Little Rama Lakshmana Hanuman Childhood", alt: "Adorable digital painting of child Rama, Lakshmana and baby Hanuman together" },
+            // 3. ANIMALS, BIRDS & MYTHICAL CREATURES
+            "3828","3829","3830","3831","3906","3907","4037","4049","4051","4052","4053",
+            "4227","4229","6595","6596","6719","6720","6722","6799","6800","6801","6802",
+            "7399","7401","7404","7416","7516","8257","8258","8259","8260","8420","9681",
+            "9684","9689",
+            "3903","3904","3912","4208","6693","6694","6695","6696","6700","6701","6702",
+            "6703","6721","7402","7403","7417",
+            "3869","6725","6726","6727","6728","6729",
+            "6812","6813","6814","6815","6816","7513","8256","9690","9691","9692","9693","9694",
 
-    // --- IMAGE 4: WARRIOR HANUMAN, KRISHNA & RAMA ---
-    "4927": { title: "Baby Hanuman Flying High Sky", alt: "Cute little Hanuman soaring high above white clouds with happy expression" },
-    "5119": { title: "Lord Hanuman Angry Warrior Form", alt: "Powerful giant warrior Hanuman tearing down mountains with intense energy" },
-    "5121": { title: "Veer Hanuman Lanka Dahana Art", alt: "Fierce look of Lord Hanuman surrounded by golden fire flames and smoke" },
-    "5122": { title: "Lord Hanuman Leading Vanar Sena", alt: "Epic battle scene of Lord Hanuman charging forward with his monkey army" },
-    "5124": { title: "Mahabali Hanuman Standing with Gada", alt: "Majestic portrait of Lord Hanuman standing tall with his golden mace weapon" },
-    "5125": { title: "Lord Hanuman Devotion Prayer Art", alt: "Powerful warrior Hanuman in kneeling prayer position with burning energy" },
-    "9652": { title: "Radhe Krishna Divine Love Painting", alt: "Beautiful Radha and Lord Krishna playing flute with Radhe Krishna golden text" },
-    "9655": { title: "Radha Krishna Flute Melodious Art", alt: "Spiritual portrait of Radha Krishna standing together with beautiful typography" },
-    "9659": { title: "Jai Shree Krishna Spiritual Graphic", alt: "Lord Krishna playing holy flute with glowing blue aura and text overlay" },
-    "9662": { title: "Jai Shree Ram Warrior Archer Art", alt: "Lord Rama holding bow and arrow with fierce orange background and holy text" },
-    "3825": { title: "Happy Navratri Durga Puja Banner", alt: "Maa Durga close up face portrait with red traditional template background" },
-    "3826": { title: "Happy Ganesh Chaturthi Festival Wish", alt: "Lord Ganesha festive creative image with warm background lights and text" },
+            // 4. COUPLES, FAMILY, KIDS & LOVE
+            "4953","4956","4957","4958","4959","4960","4961","4962","4963","4964","4965",
+            "4966","5579","5580","9667","9668","9673",
+            "6589","6640","6641","6642","6644","6645","6646","6682","6683","6684","6685",
+            "7597","7598","7599","7600",
+            "7602","7603","7604","7605","7606","9683","9666","9674","9678",
 
-    // --- IMAGE 5: SHIVA, MAA DURGA & FANTASY CHARACTERS ---
-    "3909": { title: "Abstract Shiva Lingam Light Beam", alt: "Glowing sci-fi style Shiva lingam radiating bright light beams in darkness" },
-    "3934": { title: "Happy Maha Shivaratri Divine Wish", alt: "Lord Shiva face with trishul silhouette on Happy Maha Shivaratri background" },
-    "4004": { title: "Monochrome Lord Shiva Sketch Art", alt: "Detailed black and white sketch portrait of meditating Mahadev" },
-    "9656": { title: "Jai Mata Di Maa Durga Warrior", alt: "Goddess Durga riding a lion with weapons in hands and Jai Mata Di text" },
-    "10728": { title: "Fantasy Wizard Magic Spell Caster", alt: "Old wizard character in purple robe holding glowing magic staff" },
-    "10725": { title: "Cool Clown Boy Riding Bicycle", alt: "Fun colorful joker boy character performing stunts on a bicycle" },
-    "10729": { title: "Cyberpunk Rock Star Neon Party", alt: "Stylised futuristic rock musician character dancing under neon disco lights" },
-    "10730": { title: "Steampunk Inventor Workshop Art", alt: "Old scientist character sitting among clocks, gears and vintage machine tools" },
-    "10737": { title: "Fantasy Dwarf Blacksmith Hammer", alt: "Short muscular dwarf warrior holding glowing hot hammer in forge shop" },
-    "10738": { title: "Magical Cyberpunk Girl Hologram", alt: "Cute anime styled girl controlling glowing futuristic interface elements" },
-    "10740": { title: "Vintage Explorer Sitting on Luggage", alt: "Old traveler character resting on suitcases reading a map illustration" },
-    "10739": { title: "Futuristic DJ Cyberpunk Cosmic Music", alt: "Cool musician character mixing music tracks in outer space neon booth" },
+            // 5. FESTIVALS & PATRIOTIC
+            "3823","3930","3932","3933","3935","3937","3938","3939","3940","3941","3943",
+            "3950","3951","3954","3955","3956","3957","3958","3959","3960","3961","3962",
+            "3963","3964","3965","4014","4015","4017","4018","4019","4085","4086",
+            "4088","4089","4006","4098","4185",
+            "3923","3924","3925","3926","4023","4024","4025","4026","4027","4028","4029",
+            "4030","4031","4032","4033","4034","4035","4036","4000","4091","4003","4189",
+            "5157","5158","5159","5160","5161","5162","5163","5164","5165","5166",
+            "5657","5658","5659","5660","9672",
 
-       // --- BATCH 2: CHARACTERS & WARRIORS (IMAGE 1) ---
-    "10741": { title: "Steampunk Warrior Heavy Armor", alt: "Rugged soldier character with mechanical hand carrying massive gears" },
-    "10742": { title: "Ink Sketch Samurai Japanese Art", alt: "Minimalist black ink drawing of a samurai warrior holding katana sword" },
-    "10743": { title: "Cyberpunk Alchemist Magic Potions", alt: "Futuristic scientist mixing bright glowing chemicals in a dark lab room" },
-    "10711": { title: "Gothic Dark Angel Grim Reaper", alt: "Dark hooded female figure standing near ancient ruins in fantasy ink style" },
-    "10709": { title: "Ice Queen Frost Magic Graphic", alt: "Beautiful female wizard casting freezing ice spell in glowing blue dress" },
-    "10707": { title: "Cyberpunk Ninja Shadow Assassin", alt: "Dark hooded ninja warrior standing in ink splash background style" },
-    "10712": { title: "Meditating Monk Ancient Mountain Art", alt: "Wise monk character sitting in peace on high rock in blue ink style" },
-    "10706": { title: "Dark Samurai Katana Stance Art", alt: "Shadowy Japanese warrior standing ready with long sword in ink style" },
-    "10613": { title: "Cyberpunk Soldier Red Neon Light", alt: "Futuristic soldier in tactical gear standing under bright red neon bars" },
-    "10614": { title: "Sci-Fi Cyber Samurai Golden Blade", alt: "Futuristic warrior wielding a glowing yellow neon katana sword in rain" },
-    "10615": { title: "Cyberpunk Assassin Dark Pink Neon", alt: "Cool agent character standing in wet futuristic street under pink lights" },
-    "10618": { title: "Futuristic Knight Cyber Armor Design", alt: "Mecha style knight warrior standing in dark gritty cyberpunk atmosphere" },
+            // 6. FLOWERS, NATURE & FEATHERS
+            "4170","6556","6558","6561","6687","6688","6689","6691","6827","6828","6829",
+            "6830","6831","6832","7160","7304","7395","7396","8118","8155","10171","10172",
+            "3908","4047","4218","4226",
+            "7476","7478","7479","7480","7481","7520","7522","7523",
 
-    // --- BATCH 2: CYBERPUNK & SOLDIERS (IMAGE 2) ---
-    "10619": { title: "Cyber Cyberpunk Trooper Gas Mask", alt: "Sci-fi soldier character wearing advanced mask standing in smoke aura" },
-    "10620": { title: "Paladin Knight Golden Glowing Armor", alt: "Holy warrior character holding heavy sword radiating divine yellow light" },
-    "10621": { title: "Future Tactical Special Forces Agent", alt: "Sci-fi army soldier character standing with advanced weapon gear in rain" },
-    "4040": { title: "Demon Samurai Fiery Helmet Graphic", alt: "Fierce demonic warrior head wearing traditional samurai armor with red glowing eyes" },
-    "6783": { title: "Anime Samurai Blue Ink Splatter", alt: "Cool anime swordsman character with long coat in watercolor paint style" },
-    "6786": { title: "Warrior General Red Watercolor Art", alt: "Epic ancient soldier character portrait in artistic red ink splash style" },
-    "6789": { title: "Futuristic Military Soldier Heavy Rifle", alt: "Elite army soldier character in camouflage combat vest holding rifle" },
-    "7372": { title: "Cyber Knight Red Laser Weapon", alt: "Sci-fi assassin character in glowing red armor suit holding blade" },
-    "7373": { title: "Alok Character Cyberpunk City DJ", alt: "Cool guy character with glowing red rifle standing in futuristic city street" },
-    "7434": { title: "Dark Phantom Death Reaper Armor", alt: "Eerie shadowy knight character with burning red eyes in dark smoke" },
-    "7436": { title: "Fierce Demon Lord Red Lightning", alt: "Powerful dark warrior character standing in stormy red electric sky" },
-    "7656": { title: "Shadow Assassin Dark Energy Blade", alt: "Spooky black hooded warrior character radiating purple energy smoke lines" },
+            // 7. FOOD, DRINKS & DESSERTS
+            "3872","3874","3894","3897","3900","3902","4092","4094","6704","6705","6706",
+            "6707","6708",
+            "3875","3876","3878","3889","3893","4150","4176","4196","0687",
+            "4159","4177","4193","9688",
 
-    // --- BATCH 2: DARK NINJA & INTENSE EYES (IMAGE 3) ---
-    "7657": { title: "Dark Ninja Blood Moon Horizon", alt: "Shadowy assassin warrior standing against a massive glowing red blood moon" },
-    "7658": { title: "Magical Cyber Sorcerer Blue Shield", alt: "Futuristic wizard character casting a protective bright blue energy shield" },
-    "8158": { title: "Anime Character Boy Blue Eye CloseUp", alt: "Intense close up face look of an anime boy with glowing blue eye" },
-    "8159": { title: "Anime Character Mask Green Eye CloseUp", alt: "Intense look of a ninja assassin character with sharp green eye" },
-    "8160": { title: "Anime Ninja Warrior Purple Eye Portrait", alt: "Close up portrait of a dark warrior character with glowing purple eye" },
-    "8161": { title: "Anime Warrior Character Golden Eye Face", alt: "Intense look of a fierce warrior character with bright yellow glowing eye" },
-    "8162": { title: "Anime Ninja Mask Red Eye CloseUp", alt: "Dangerous look of a dark ninja warrior character with glowing red eye" },
-    "8263": { title: "Ice Wizard Deep Blue Magic Meditation", alt: "Magical character sitting on water casting blue frozen energy circles" },
-    "8264": { title: "Dark Witch Red Magic Ritual", alt: "Mysterious hooded female character casting red spells in fantasy forest" },
-    "8265": { title: "Angel Warrior Bright Light Aura", alt: "Beautiful winged female character floating down with heavenly light rays" },
-    "8266": { title: "Dark Sorceress Purple Magic Energy", alt: "Fantasy female wizard character calling purple electric storms digital painting" },
-    "8267": { title: "Ancient King Golden Throne Crown", alt: "Wise old king character sitting on stone throne in grand hall artwork" },
+            // 8. FANTASY WEAPONS
+            "8873","8874","8875","8876","8877",
 
-    // --- BATCH 2: FANTASY WARRIORS & CYBER BLADES (IMAGE 4) ---
-    "8268": { title: "Frost King Blue Ice Armor", alt: "Powerful fantasy ruler character standing tall in frozen icy kingdom palace" },
-    "8269": { title: "Golden Tiger Human Warrior Monster", alt: "Muscular half human half tiger fantasy hybrid character in golden glowing armor" },
-    "8270": { title: "Dark Tiger Beast Warrior Armor", alt: "Fierce looking werewolf tiger monster character standing in golden smoke aura" },
-    "8271": { title: "Elven King Silver Light Forest", alt: "Noble elf character with long silver hair standing in glowing fantasy woods" },
-    "8373": { title: "Dark Knight Blood Moon Executioner", alt: "Fierce warrior character with big sword standing under crimson red sky" },
-    "8626": { title: "Steampunk Hunter Leather Coat Hat", alt: "Rugged cowboy style investigator character holding rifle in fog" },
-    "9369": { title: "Cyber Ninja Dual Purple Swords", alt: "Futuristic assassin character wielding two glowing purple neon blades" },
-    "9370": { title: "Sci Fi Mecha Ninja Blue Laser Blade", alt: "Advanced cyborg warrior character standing ready with neon glowing sword" },
-    "9373": { title: "Cyberpunk Cyber Samurai Red Fire Swords", alt: "Futuristic soldier character wielding two blazing orange laser katanas" },
-    "9374": { title: "Sci-Fi Cyber Warrior Blue Electric Blade", alt: "Elite futuristic knight character holding a crackling blue energy sword" },
-    "9375": { title: "Cyberpunk Swordsman Green Neon Katana", alt: "Cool assassin character standing in rain holding glowing green laser sword" },
-    "9378": { title: "Cyber Mecha Trooper Purple Greatsword", alt: "Heavy armored robot knight character holding a massive neon purple sword" },
+            // 9. PLACES & ARCHITECTURE
+            "3833","3834","3835","3836","3005","3088","3900","4008","4010","4011","4013",
+            "4038","4039","4040","4048","4217","4221",
 
-    // --- BATCH 2: FANTASY PRINCESS & ANIME SAMURAI (IMAGE 5) ---
-    "9379": { title: "Fantasy Sorceress Pink Magic Flame", alt: "Beautiful female wizard character in white dress casting pink spells" },
-    "10174": { title: "Ice Dragon Rider Winter Fantasy Art", alt: "Cool warrior character controlling a massive frozen blue ice dragon beast" },
-    "10467": { title: "Gothic Witch Ancient Ruin Castle Night", alt: "Mysterious lady character in dark dress standing near vintage tower under moon" },
-    "10468": { title: "Angel Goddess White Light Clouds Art", alt: "Beautiful female fairy character floating in sky in glowing bright dress" },
-    "10469": { title: "Elf Princess Magic Forest Digital Painting", alt: "Fantasy female character with long hair walking through dense green woods" },
-    "10470": { title: "Princess Sitting Palace Balcony Garden", alt: "Royal lady character resting on vintage stone terrace with beautiful scenery" },
-    "10471": { title: "Fantasy Bride Pink Dress Cherry Blossom", alt: "Beautiful anime styled girl character under blooming sakura tree artwork" },
-    "10472": { title: "Ice Mage Girl Winter Snow Mountain", alt: "Anime style female warrior character standing in heavy winter snowfall" },
-    "10473": { title: "Prince Traveler Scenic Lake Mountain", alt: "Young male adventurer character standing near beautiful natural lake view" },
-    "10474": { title: "Anime Samurai Girl Full Moon Forest", alt: "Beautiful female warrior character holding katana sword under night sky background" },
-    "10475": { title: "Prince Character Pink Sakura Garden", alt: "Elegant young male anime character standing among beautiful pink flower petals" },
-    "10476": { title: "Young Samurai Traditional Armor Stance", alt: "Japanese boy warrior character holding sword ready for ancient battle" },
-         
-    // --- BATCH 3: SAMURAI & MECHA CHARACTERS (IMAGE 1) ---
-    "10477": { title: "Japanese Samurai Red Cherry Blossom", alt: "Anime style samurai warrior with katana sword under falling cherry blossom petals" },
-    "10478": { title: "Dark Ninja Moon Dynamic Stance", alt: "Cool shadow ninja character jumping in front of a big bright full moon" },
-    "10479": { title: "Elegant Prince Kimono Sakura Art", alt: "Handsome anime character wearing traditional white pink kimono in sakura garden" },
-    "10480": { title: "Ink Splash Ronin Samurai Sketch", alt: "Powerful ronin warrior drawing in black and white traditional ink wash art style" },
-    "10481": { title: "Anime Swordsman Pink Petals Background", alt: "Long hair warrior character standing elegantly in fantasy pink aura landscape" },
-    "10482": { title: "Shadow Assassin Dark Samurai Armor", alt: "Fierce ninja character in full black protective armor standing in smoke" },
-    "10483": { title: "Warrior Prince Sunset Horizon Landscape", alt: "Epic anime character looking back at sunset golden sky fantasy graphic" },
-    "10484": { title: "Wise Old Swordsman Ink Painting", alt: "Elderly master samurai holding katana sword in monochrome watercolor splash art" },
-    "10485": { title: "Meditating Ronin Full Moon Night", alt: "Peaceful lone warrior character sitting on rock looking at bright night moon" },
-    "10486": { title: "Lone Traveler Mist Mountain Pathway", alt: "Anime traveler character standing in foggy mountain range landscape graphic" },
-    "4045": { title: "Cyberpunk Robot Mecha Neon Face", alt: "Advanced cyborg human skull design with glowing blue neon electric circuits" },
-    "6808": { title: "Sci-Fi Cyberpunk Girl Neon Hair", alt: "Cool futuristic female agent character with glowing blue and pink cyber hair" },
+            // 10. ABSTRACT, 3D, BOTTLES & DESIGNS
+            "3832","3837","3838","3857","3868","3870","3871","3911","3918","3920","3921",
+            "3969","4012","4041","4043","4044","4050","4081","4154","4166","4174","4175",
+            "4178","4182","4184","4195","9365","9366","9682","9683","9685","9686","10175",
+            "4151","4156","4179","6753","6754","6755","6756","6757","8010",
+            "6779","6780","6781","6782","7409","7450","7451","7452","8136","8137","8138",
+            "8130","10380","10390","10301","10302","10303","10304","10395","10396","10398","10399","10400","10401","10402","10403",
+            "6769","6770","6771","6772","7407","7408","7409"
+        ];
 
-    // --- BATCH 3: CYBER & BLACK-WHITE SKETCH ART (IMAGE 2) ---
-    "6809": { title: "Dark Demon King Gothic Throne", alt: "Gothic style vampire lord character sitting majestically on dark spike throne" },
-    "6810": { title: "Cyberpunk Warrior Red Fire Horizon", alt: "Futuristic rebel character looking at burning orange city skyline background" },
-    "6811": { title: "Retro Cyberpunk Sports Car Sunset", alt: "Cool driver character leaning on neon sports car in synthwave sunset scene" },
-    "7439": { title: "Dark Boy White Owl Ink Sketch", alt: "Beautiful monochrome ink art of a dark hair boy holding a majestic white owl" },
-    "7440": { title: "Anime Boy Crow Spiritual Artwork", alt: "Black and white ink splatter graphic of a handsome boy with dark raven bird" },
-    "7443": { title: "Gothic Boy Magical White Eagle", alt: "Artistic monochrome sketch of fantasy male character with huge glowing white bird" },
-    "7444": { title: "Angel Warrior Phoenix Wings Ink Art", alt: "Stunning black and white splash drawing of a winged character with divine bird" },
-    "7445": { title: "Fairy Prince White Owl Forest Sketch", alt: "Beautiful monochrome portrait of an anime boy with a giant spiritual owl" },
-    "7541": { title: "Grim Reaper Dark Knight Armor", alt: "Ghostly skeleton warrior character in black hooded cloak holding weapon in storm" },
-    "7544": { title: "Shadow Death Executioner Foggy Forest", alt: "Spooky dark phantom character standing in misty dense woods digital painting" },
-    "8068": { title: "Fiery Demon Lord Red Lava Aura", alt: "Fierce dark character surrounded by burning red hellfire flames graphic" },
-    "8069": { title: "Electric Sorcerer Blue Lightning Energy", alt: "Powerful mecha style wizard character calling blue cosmic electric storms" },
-
-    // --- BATCH 3: FANTASY DEMONS & HALLOWEEN WITCHES (IMAGE 3) ---
-    "8070": { title: "Green Flame Overlord Fiery Monster", alt: "Demonic fantasy entity glowing with bright neon green radioactive fire" },
-    "8071": { title: "Cosmic Void entity Purple Nebula", alt: "Abstract space phantom character radiating bright purple celestial energy waves" },
-    "8072": { title: "Volcanic Lava Monster Burning Rocks", alt: "Fierce elemental giant creature made of burning magma and dark volcano stones" },
-    "8880": { title: "Anime Boy Half Face Cyber Blue", alt: "Intense close up portrait of an anime boy with right face in blue electronic glow" },
-    "8881": { title: "Fantasy Queen Half Face Pink Magic", alt: "Beautiful lady face portrait fading into pink glowing stardust particles" },
-    "8882": { title: "Cosmic Prince Half Face Gold Lightning", alt: "Stunning male face art split with bright golden electric energy lines" },
-    "8883": { title: "Dark Prince Half Face Red Smoke", alt: "Mysterious boy face portrait blending into burning red fire embers" },
-    "8884": { title: "Cyber Agent Half Face Cyan Matrix", alt: "Cool neon look of an anime character face mixed with tech binary data codes" },
-    "8624": { title: "Halloween Witch Pumpkin Magic Lantern", alt: "Spooky witch character in black hat carrying a glowing pumpkin jack-o-lantern" },
-    "8625": { title: "Gothic Witch Spell Book Dark Ritual", alt: "Mysterious female sorceress casting spells next to glowing retro lanterns" },
-    "8627": { title: "Spooky Halloween Witch Cat Forest", alt: "Classic fantasy witch character walking in creepy graveyard forest under moon" },
-    "8628": { title: "Sorceress Queen Purple Halloween Magic", alt: "Beautiful witch lady character calling purple magic swirls in dark woods" },
-
-    // --- BATCH 3: COLOURED ANIME & DESERT WARRIORS (IMAGE 4) ---
-    "10201": { title: "Cute Anime Girl Watercolor Portrait", alt: "Soft beautiful close up face painting of an anime girl with cherry blossom colors" },
-    "10202": { title: "Beautiful Fantasy Princess Floral Aura", alt: "Lovely feminine portrait artwork with pastel pink and blue watercolor splash" },
-    "10219": { title: "Crimson Ninja Warrior Ink Stance", alt: "Cool Japanese assassin character wearing red scarf holding dual katana swords" },
-    "10221": { title: "Green Forest Samurai Bamboo Grove", alt: "Anime swordsman character in green clothing standing ready in bamboo forest" },
-    "10222": { title: "Desert Ronin Ancient City View", alt: "Rugged samurai character standing on cliff overlooking a grand middle eastern town" },
-    "10224": { title: "Blue Sea Pirate Ocean Horizon", alt: "Anime adventurer character with blue coat standing on rocky shore in rain" },
-    "10233": { title: "Holy Knight Silver Paladin Armor", alt: "Noble warrior character in shiny white steel armor holding massive sword" },
-    "10234": { title: "Elven King Golden Crest Forest", alt: "Majestic elf prince character in white robes holding dynamic long staff weapon" },
-    "10235": { title: "Fiery Berserker Red Dragon Armor", alt: "Muscular warrior character with burning orange hair holding heavy combat spear" },
-    "10236": { title: "Dark Assassin Black Leather Coat", alt: "Stealthy agent character standing in modern dark gothic alleyway illustration" },
-    "10237": { title: "Paladin Princess Pink Rose Armor", alt: "Beautiful female knight character in decorative pink white royal combat suit" },
-    "10238": { title: "Desert Nomad Golden Sand Dunes", alt: "Rugged traveler character standing in hot sunny desert looking at horizon" },
-
-    // --- BATCH 3: ANIMALS & MYTHICAL CREATURES (IMAGE 5) ---
-    "10239": { title: "Red Samurai Warrior Fire Embers", alt: "Epic ancient soldier character portrait in dark glowing smoke background" },
-    "10259": { title: "Shadow Executioner Full Moon Eclipse", alt: "Dark hooded phantom character holding giant scythe blade under blood moon" },
-    "10260": { title: "White Hair Mage Snow Storm Winter", alt: "Anime wizard character in white coat standing in heavy freezing snowfall" },
-    "4054": { title: "Astronaut Cosmos Zodiac Constellation", alt: "Cool astronaut character floating in space surrounded by glowing golden zodiac symbols" },
-    "3828": { title: "King Kong vs Bear Epic Clash", alt: "Massive gorilla giant fighting a huge wild grizzly bear on snow mountain top" },
-    "3829": { title: "Giant Sea Serpent Crocodile Battle", alt: "Mythical massive water dragon monster fighting a giant crocodile in stormy ocean" },
-    "3830": { title: "Majestic White Eagle Snow Wolf", alt: "Beautiful fantasy graphics of a white eagle bird flying above a wild white wolf" },
-    "3831": { title: "Fiery Lion Ice Wolf Celestial Conflict", alt: "Epic abstract art of burning fire lion face clashing with frozen blue ice wolf" },
-    "3906": { title: "Mystical White Wolf Full Moon Night", alt: "Beautiful glowing white wolf standing proudly under a massive bright full moon" },
-    "3907": { title: "Golden King Lion Sun Majesty", alt: "Stunning digital painting of a powerful male lion with glowing golden mane in forest" },
-    "4037": { title: "Glow In Dark Golden Lion Portrait", alt: "Intense close up look of a lion face made of sparkling golden dust particles" },
-    "4049": { title: "Whale Flying Cosmic Galaxy Nebula", alt: "Beautiful fantasy dream art of a massive blue whale swimming through starry outer space" },
-         
-    // --- BATCH 4: WOLVES, TIGERS & LEOPARDS (IMAGE 1) ---
-    "4051": { title: "Fiery Fire Wolf Burning Embers", alt: "Stunning digital art of a wild wolf completely made of orange burning fire" },
-    "4052": { title: "Ice Wolf Frozen Blue Lightning", alt: "Majestic wolf graphic glowing with cosmic blue ice and winter energy" },
-    "4053": { title: "Spiritual White Tiger Cosmic Magic", alt: "Beautiful roaring white tiger surrounded by magical blue light lines" },
-    "4227": { title: "Mystical White Stag Glowing Antlers", alt: "Fantasy deer with glowing crystalline horns standing on dark rocks" },
-    "4229": { title: "Dark Panther Galaxy Full Moon Night", alt: "Black panther with starry cosmic fur texture sitting under huge moon" },
-    "6595": { title: "White Bengal Tiger Ancient Jungle", alt: "Majestic tiger walking through dense vintage forest digital painting" },
-    "6596": { title: "Black Panther Golden Eyes Forest", alt: "Fierce black panther stalking in dark woods with sharp yellow eyes" },
-    "6719": { title: "Golden Retriever Puppies Autumn Aura", alt: "Three cute golden retriever dogs sitting together in soft autumn lights" },
-    "6720": { title: "Beautiful Wild Red Fox Art", alt: "Three red foxes sitting side by side in artistic watercolor style painting" },
-    "6722": { title: "Wild Wolves Pack Winter Watercolor", alt: "Three grey wolves standing together in traditional wet ink splash art" },
-    "6799": { title: "Epic Lion vs Tiger Battle Art", alt: "Powerful clash of a male lion and a fierce Bengal tiger fighting digital graphic" },
-    "6800": { title: "Leopards Climbing Tree Vintage Art", alt: "Two spotted leopards wrestling playfully on a thick branch in jungle" },
-
-    // --- BATCH 4: WILD BEASTS & LIONS (IMAGE 2) ---
-    "6801": { title: "Leopards Fighting Jungle Safari Scene", alt: "Intense action painting of two big wild cats battling on rocks" },
-    "6802": { title: "Fierce Brown Bears Mountain Clash", alt: "Two massive grizzly bears fighting aggressively in watercolor style" },
-    "7399": { title: "White Lion Portrait Soft Fur Sketch", alt: "Beautiful clean close up face art of a proud male white lion" },
-    "7401": { title: "Golden Fire Lion Sun Majesty", alt: "Stunning lion portrait with mane blending into bright glowing orange clouds" },
-    "7404": { title: "Dark Nightmare Stallion Black Horse", alt: "Fierce black horse with glowing red eyes running in dark smoke background" },
-    "7416": { title: "Love Wolves Couple Floral Aura", alt: "Cute white and grey wolf cuddling together surrounded by purple flowers" },
-    "7516": { title: "Howling Wolf Blue Cosmic Moon", alt: "Spiritual wolf portrait howling inside a glowing neon blue crystal frame" },
-    "8257": { title: "Black Wolf Cyberpunk City Rain", alt: "Futuristic dark wolf standing on a tech roof looking over neon streets" },
-    "8258": { title: "Cyber Mecha Panther Tech Armor", alt: "Sci-fi black panther robot with glowing orange mechanical lines in rain" },
-    "8259": { title: "Fierce Cyber Wolf Neon Blue Lines", alt: "Robotic wolf creature with advanced mecha body parts standing in dark alley" },
-    "8260": { title: "Dark Bear Monster Red Eyes Cyberpunk", alt: "Futuristic heavy armored bear cyborg sitting in gritty sci-fi background" },
-    "8429": { title: "Lion Couple Romance Cherry Blossom", alt: "Beautiful male lion and lioness together under pink sakura flowers tree" },
-
-    // --- BATCH 4: BIRDS, PEACOCK & JELLYFISH (IMAGE 3) ---
-    "9681": { title: "Neon Tiger Face Cosmic Grid", alt: "Abstract digital artwork of a tiger head lit with blue and orange electric lines" },
-    "9684": { title: "Magical Pink Jellyfish Deep Ocean", alt: "Beautiful glowing pink jellyfish swimming peacefully in dark water" },
-    "9689": { title: "White Tiger Face Forest Portrait", alt: "Intense close up eyes look of a majestic white tiger coming out of leaves" },
-    "3903": { title: "Royal Blue Peacock Palace Arch", alt: "Beautiful peacock bird showing long colorful feathers in a grand glowing hall" },
-    "3904": { title: "Golden Eagle Flying Sun Clouds", alt: "Majestic eagle soaring high with open wings against bright sunset sky" },
-    "3912": { title: "Glowing Blue Jellyfish Magic Coral", alt: "Sci-fi style bioluminescent jellyfish floating in electric deep sea space" },
-    "4208": { title: "Deep Sea Purple Jellyfish Graphic", alt: "Stunning purple and pink jellyfish casting light swirls in dark ocean water" },
-    "6693": { title: "Two Peacocks Golden Baroque Frame", alt: "Elegant vintage style painting of beautiful peacocks in a decorative border" },
-    "6694": { title: "White Swans Love Heart Lake", alt: "Two white swans forming a heart shape with necks in an emerald green pool" },
-    "6695": { title: "Colorful Macaw Parrots Sunflowers", alt: "Two blue and yellow parrots sitting together in a field of bright sunflowers" },
-    "6696": { title: "Love Birds Couple Vintage Floral Frame", alt: "Two cute pink birds sitting on a branch inside a retro rose flower border" },
-    "6700": { title: "Hummingbird Flying Watercolor Art", alt: "Beautiful small bird catching nectar in dynamic green and blue ink splashes" },
-
-    // --- BATCH 4: PARROTS, SWANS & BUTTERFLIES (IMAGE 4) ---
-    "6701": { title: "Two Peacocks Artistic Paint Splatter", alt: "Elegant peacocks walking together in abstract blue and green watercolor background" },
-    "6702": { title: "Love Parrots Red Fire Splash", alt: "Two scarlet macaw parrots sitting side by side in bright artistic ink splashes" },
-    "6703": { title: "Beautiful White Swans Lake Portrait", alt: "Two graceful swans facing each other on water in soft watercolor painting" },
-    "6721": { title: "Bald Eagles Trio Watercolor Art", alt: "Three majestic eagle birds standing together in traditional splash ink style" },
-    "7402": { title: "Red Owl Portrait CloseUp Feathers", alt: "Intense look of a beautiful owl covered completely in rich red feathers" },
-    "7403": { title: "Green Owl Mystic Forest Graphic", alt: "Abstract vector art style profile of an owl made of green leaf lines" },
-    "7417": { title: "Mandarin Ducks Lake Sunset Romance", alt: "Two colorful ducks swimming together under a beautiful golden sunset sky" },
-    "3869": { title: "Crystalline Diamonds Butterfly Magic", alt: "Beautiful shiny butterflies made of glowing glass crystals floating in air" },
-    "6725": { title: "Blue Butterfly Vintage Rose Journal", alt: "Charming old style sketch of a bright blue butterfly resting on paper text" },
-    "6726": { title: "Vintage White Butterfly Pink Flowers", alt: "Retro watercolor drawing of a delicate butterfly surrounded by soft garden blossoms" },
-    "6727": { title: "Monarch Butterfly Sunflower Old Text", alt: "Classic postcard style art of an orange monarch butterfly on yellow flowers" },
-    "6728": { title: "Purple Emperor Butterfly Lilac Garden", alt: "Beautiful vintage illustration of a purple butterfly resting on lavender fields" },
-
-    // --- BATCH 4: DRAGONS, UNICORN & PHOENIX (IMAGE 5) ---
-    "6729": { title: "Teal Butterfly Sunflowers Vintage Background", alt: "Elegant dark cyan butterfly resting on a sunflower in retro sepia style" },
-    "6812": { title: "Magical Galaxy Unicorn Rainbow Mane", alt: "Beautiful white unicorn horse running through bright sparkling nebula stars" },
-    "6813": { title: "Fiery Phoenix Bird Rebirth Art", alt: "Epic legendary phoenix bird flying high with massive blazing orange wings" },
-    "6814": { title: "Chinese Azure Dragon Storm Clouds", alt: "Traditional style blue dragon serpent flying through stormy electric sky" },
-    "6815": { title: "Golden Griffin Mythical Beast Eagle", alt: "Half lion half eagle griffin creature standing tall on mountain peak sketch" },
-    "6816": { title: "Pegasus Winged White Horse Stars", alt: "Beautiful fantasy image of a majestic winged horse standing under stardust clouds" },
-    "7513": { title: "Green Emerald Dragon Temple Door", alt: "Mystical green snake dragon guarding an ancient stone temple gate carve" },
-    "8256": { title: "Dark Gothic Obsidian Dragon Ruins", alt: "Fierce black armored dragon monster resting on broken castle walls at night" },
-    "9690": { title: "Red Fire Dragon Volcano Lava", alt: "Epic fantasy graphic of a massive western dragon breathing orange hellfire flames" },
-    "9691": { title: "Golden Dragon Holy Light Castle", alt: "Majestic golden scales dragon flying above a royal fortress tower in sunset" },
-    "9692": { title: "White Ice Dragon Full Moon Night", alt: "Beautiful crystal frost dragon standing on snow rock looking at massive moon" },
-    "9693": { title: "Golden Steampunk Horse Mechanical Clock", alt: "Amazing futuristic horse sculpture made of glowing golden gears and brass tubes" },
-        
-    // --- BATCH 5: MOTHER'S DAY & FAMILY LOVE (IMAGE 1) ---
-    "9694": { title: "Golden Peacock Feather Mandala Art", alt: "Beautiful glowing golden peacock feathers forming a circular decorative design" },
-    "4953": { title: "I Love You Mom Heart Graphic", alt: "Beautiful silhouette art of a mother holding her daughter inside a glowing pink heart" },
-    "4956": { title: "Maa Mother Love Silhouette Background", alt: "Emotional artwork of a mother hugging her children in front of a red glowing moon" },
-    "4957": { title: "Mom My Heart Glowing Text", alt: "Elegant white sketch of a mother and baby inside a blue neon heart frame" },
-    "4958": { title: "Worlds Best Mom Typography Poster", alt: "Heartwarming portrait of a mother kissing her son with decorative typography" },
-    "4959": { title: "Happy Mothers Day Golden Greeting", alt: "Luxury style golden mandala pattern enclosing mother child artwork" },
-    "4960": { title: "My First Love Mom Neon Sign", alt: "Glowing green neon light border surrounding a cute mother and child drawing" },
-    "4961": { title: "My Angel Mom Mother Day Wallpaper", alt: "Adorable blue glowing heart sketch featuring a mother hugging her little girl" },
-    "4962": { title: "I Love You Maa Emotional Design", alt: "Bright pink neon heart template with silhouette of a mother carrying her baby" },
-    "4963": { title: "My World My Mom Festive Wish", alt: "Purple glowing floral background with heart sketch celebrating mothers love" },
-    "4964": { title: "Mom My Forever Hero Golden Art", alt: "Elegant gold lace heart design with text honoring mothers day" },
-    "4965": { title: "My Mom Queen Of My Heart", alt: "Royal style red neon greeting poster with mother and children silhouette" },
-
-    // --- BATCH 5: FATHER'S DAY & ROMANTIC COUPLES (IMAGE 2) ---
-    "4966": { title: "Home Is Mom Heart Touching Quote", alt: "Glowing teal colored neon frame featuring a lovely mother child embrace art" },
-    "5579": { title: "I Love You Papa Father Day Greeting", alt: "Luxury gold typography with I Love You Papa text on a rich red background" },
-    "5580": { title: "Happy Fathers Day Golden Banner", alt: "Festive golden ribbon template with stars celebrating Happy Fathers Day" },
-    "9667": { title: "I Love My Mom Parents Devotion Art", alt: "Golden fiery aura background showing parent and child silhouette with text" },
-    "9668": { title: "I Love My Mom Golden Silhouette Poster", alt: "Glow in dark golden light design with mother and kid silhouette" },
-    "9673": { title: "I Love My Father Hands Holding Heart", alt: "Beautiful graphic of golden hands holding a shining heart with typography" },
-    "6589": { title: "Cristiano Ronaldo Portugal Football Art", alt: "Stunning paint splash portrait of football player Cristiano Ronaldo in jersey" },
-    "6640": { title: "Romantic Couple Pink Cherry Blossom Garden", alt: "Beautiful anime style couple standing near water under sakura blossom trees" },
-    "6641": { title: "Anime Couple Sunset Beach Romance", alt: "Lovely couple character holding hands on sea shore during golden sunset hour" },
-    "6642": { title: "Fantasy Couple Purple Flower Field Night", alt: "Romantic boy and girl character standing together under a starry nebula sky" },
-    "6644": { title: "Beautiful Wedding Couple Golden Hour", alt: "Elegant anime style bride and groom standing near ocean beach in warm lighting" },
-    "6645": { title: "Anime Couple Magical Garden Full Moon", alt: "Fantasy couple character walking through glowing pink flower woods at night" },
-
-    // --- BATCH 5: ROMANTIC SCENES & CYBER HEARTS (IMAGE 3) ---
-    "6646": { title: "Elegant Couple Vintage Palace Balcony", alt: "Anime couple character standing together overlooking a beautiful river view" },
-    "6682": { title: "Beautiful Couple Historic Indian Temple", alt: "Traditional style couple character enjoying sunset view near ancient architecture" },
-    "6683": { title: "Anime Couple Japanese Pagoda Night", alt: "Lovely couple standing near a traditional asian tower under full moon sky" },
-    "6684": { title: "Romantic Couple Eiffel Tower Paris Night", alt: "Beautiful anime characters hugging with illuminated Eiffel Tower background" },
-    "6685": { title: "Bridal Couple Golden Light Temple", alt: "Stunning digital artwork of a traditional wedding couple in front of grand hall" },
-    "7597": { title: "Cute Chibi Dolls Pink Outfits", alt: "Adorable cartoon boy and girl chibi doll characters standing together in pink clothes" },
-    "7598": { title: "Sweet Chibi Couple Purple Flowers", alt: "Cute cartoon doll characters hugging surrounded by lavender floral background" },
-    "7599": { title: "Adorable Chibi Boy Girl Rain Walk", alt: "Cute tiny doll characters walking together under a bright magical umbrella" },
-    "7600": { title: "Cute Chibi Couple Autumn Bokeh Art", alt: "Lovely cartoon doll figures standing together in soft golden warm lighting" },
-    "7602": { title: "Broken Heart Red Fire Burning", alt: "Abstract graphic of a glass heart cracked into pieces with red flames" },
-    "7603": { title: "Glowing Purple Neon Crystal Heart", alt: "Beautiful abstract design of a sparkling heart shape radiating purple energy" },
-    "7604": { title: "Abstract Fire And Water Heart Grid", alt: "Stunning conceptual art of a heart formed by golden lightning and dark waves" },
-
-    // --- BATCH 5: CYBER HEARTS & INDIAN FESTIVALS (IMAGE 4) ---
-    "7605": { title: "Cosmic Neon Blue Heart Explosion", alt: "Abstract digital artwork of a sparkling heart emitting bright cyan light waves" },
-    "7606": { title: "Magical Firefly Heart Crystalline Shape", alt: "Beautiful glowing heart made of sparkling dust particles in dark forest" },
-    "9663": { title: "My Broken Love Golden Heart Silhouette", alt: "Sad lonely boy silhouette inside a cracked glowing golden heart shape" },
-    "9666": { title: "My Broken Love Sad Boy Golden Art", alt: "Emotional silhouette of a lonely boy inside a broken fiery heart border" },
-    "9674": { title: "Love Heart Floating on Hands Neon", alt: "Minimalist glowing pink neon heart floating over cupped hands digital icon" },
-    "9678": { title: "Gangster Car Neon Dark City View", alt: "Cool retro style sports car in dark street with bold golden Gangster text" },
-    "3823": { title: "Happy Eid Mubarak Festive Template", alt: "Beautiful traditional style greeting poster with crescent moon and text" },
-    "3930": { title: "Happy Holi Colorful Powder Splash", alt: "Vibrant festive template with multi colored gulal powder splashes for Holi wish" },
-    "3932": { title: "Happy Durga Puja Navratri Wish Banner", alt: "Goddess Durga face silhouette with oil lamps and traditional red template" },
-    "3933": { title: "Happy Raksha Bandhan Rakhi Thali Background", alt: "Festive design with traditional rakhi threads, sweets and warm background" },
-    "3935": { title: "Happy Ram Navami Lord Rama Greeting", alt: "Lord Rama holding bow and arrow with golden festive text for Ram Navami" },
-    "3937": { title: "Happy Makar Sankranti Colorful Kites", alt: "Festive banner with bright kites flying in sunny blue sky above wheat fields" },
-
-    // --- BATCH 5: INDIAN FESTIVALS & REGIONAL CELEBRATIONS (IMAGE 5) ---
-    "3938": { title: "Happy Onam Kathakali Face Greeting", alt: "Traditional Kerala festival banner with beautiful pookalam flower design" },
-    "3939": { title: "Happy Pongal Traditional Pot Celebration", alt: "South Indian harvest festival wish poster with sugarcane and mud pot graphic" },
-    "3940": { title: "Happy Baisakhi Punjabi Harvest Banner", alt: "Festive yellow template with dhol drum, wheat crop and Baisakhi wishes" },
-    "3941": { title: "Happy Bhai Dooj Tikka Ritual Greeting", alt: "Warm festive background with traditional thali celebrating brother sister bond" },
-    "3943": { title: "Happy Dussehra Lord Rama Archer Bow", alt: "Epic festive poster showing silhouette of Lord Rama shooting fiery arrow" },
-    "3950": { title: "Happy Lohri Bonfire Winter Festival Wish", alt: "Beautiful nighttime bonfire scene with popcorn and traditional Lohri text" },
-    "3951": { title: "Happy Gudi Padwa Maharashtra New Year", alt: "Festive banner showing traditionally decorated Gudi flag with garlands" },
-    "3954": { title: "Happy Govardhan Puja Lord Krishna Art", alt: "Spiritual design showing young Krishna lifting Govardhan hill on little finger" },
-    "3955": { title: "Happy Bihu Assamese Festive Wish", alt: "Traditional red background with Jaapi hat and Pepa instrument celebrating Bihu" },
-    "3956": { title: "Happy Akshaya Tritiya Golden Kalash Puja", alt: "Auspicious greeting banner with gold coins pot and lotus flowers background" },
-    "3957": { title: "Happy Kali Puja Deepavali Divine Greeting", alt: "Fierce glowing sword and oil lamps layout for Goddess Kali Puja wish" },
-    "3958": { title: "Happy Vat Purnima Traditional Puja Ritual", alt: "Auspicious banyan tree thread ritual illustration for Vat Savitri puja banner" },
-    
-    // --- BATCH 6: INDIAN REGIONAL FESTIVALS (IMAGE 1) ---
-    "3959": { title: "Happy Kumbh Mela Spiritual Gathering Wish", alt: "Divine sunset scene at holy river bank with oil lamps celebrating Kumbh Mela" },
-    "3960": { title: "Happy Ahoi Ashtami Traditional Puja Graphic", alt: "Auspicious red and gold festive design with traditional oil lamps for Ahoi Ashtami" },
-    "3961": { title: "Happy Ratha Yatra Lord Jagannath Greeting", alt: "Majestic golden temple chariot background celebrating Lord Jagannath Ratha Yatra" },
-    "3962": { title: "Happy Thaipusam Tamil Festival Wish", alt: "Traditional South Indian festive layout featuring peacock feathers and traditional spears" },
-    "3963": { title: "Happy Gangaur Rajasthani Festival Banner", alt: "Vibrant red traditional artwork celebrating Rajasthani Gangaur Teej festival" },
-    "3964": { title: "Happy Tulsi Vivah Auspicious Puja Art", alt: "Beautifully decorated holy Tulsi plant in a courtyard celebrating Tulsi Vivah" },
-    "3965": { title: "Happy Kartik Purnima Holy Night Sky", alt: "Stunning night scene with glowing lamps floating down a river under full moon" },
-    "4014": { title: "Happy Rang Panchami Colorful Powder Splash", alt: "Bright festive template with multi colored gulal powder plates for Rang Panchami wish" },
-    "4015": { title: "Happy Basant Utsav Spring Festival Greeting", alt: "Beautiful yellow floral background celebrating spring festival Basant Panchami" },
-    "4017": { title: "Happy Harela Uttarakhand Green Festival", alt: "Fresh green leaves and farming crop layout celebrating Harela festival of nature" },
-    "4018": { title: "Happy Guru Nanak Jayanti Gurpurab Wish", alt: "Golden illuminated silhouette of Golden Temple celebrating Guru Nanak Gurpurab" },
-    "4019": { title: "Happy Jamai Sasthi Traditional Bengali Festival", alt: "Rich traditional food platter layout celebrating Bengali festival Jamai Sasthi" },
-
-    // --- BATCH 6: GLOBAL HOLIDAYS & FESTIVALS (IMAGE 2) ---
-    "4085": { title: "Happy Guru Purnima Spiritual Wisdom Greeting", alt: "Meditating monk silhouette under bright glowing moon celebrating Guru Purnima" },
-    "4086": { title: "Happy Vasant Panchami Goddess Saraswati Art", alt: "Goddess Saraswati sitting on lotus playing veena for Vasant Panchami wallpaper" },
-    "4088": { title: "Saraswati Puja Basant Panchami Banner", alt: "Elegant golden theme with musical veena instrument for Saraswati Puja wish" },
-    "4089": { title: "Happy Vishu Kerala New Year Celebration", alt: "Traditional Kerala festival layout with golden Kani Konna flowers and lamps" },
-    "4096": { title: "Happy Buddha Purnima Peace Greeting", alt: "Lord Buddha sitting in deep meditation with soft glowing lights background" },
-    "4098": { title: "Happy Diwali Shubh Deepavali Wishes", alt: "Beautiful nighttime dark background with glowing traditional clay oil lamps" },
-    "4185": { title: "Happy Baisakhi Punjabi New Year Banner", alt: "Festive golden template with dhol drum, wheat crop and Punjabi Baisakhi wishes" },
-    "3923": { title: "Happy Mardi Gras Carnival Mask Poster", alt: "Colorful festive mask with purple, green and gold feathers for Mardi Gras" },
-    "3924": { title: "Happy 4th of July Independence Day Statue", alt: "Statue of Liberty silhouette with American national flag theme artwork" },
-    "3926": { title: "Eid Mubarak Crescent Moon Greeting Banner", alt: "Beautiful nighttime mosque silhouette under glowing crescent moon for Eid wish" },
-    "3927": { title: "Happy Halloween Spooky Pumpkin Night", alt: "Creepy glowing jack-o-lantern pumpkins in front of a spooky castle under full moon" },
-    "4020": { title: "Merry Christmas Tree Holiday Wish Background", alt: "Beautifully lit Christmas tree surrounded by glowing winter snow bokeh lights" },
-
-    // --- BATCH 6: INTERNATIONAL CARNIVALS & EVENTS (IMAGE 3) ---
-    "4024": { title: "La Tomatina Festival Red Tomato Splash", alt: "Vibrant Spain festival template filled with energetic red tomato splashes" },
-    "4025": { title: "Happy Songkran Thailand Water Festival Greeting", alt: "Beautiful traditional Thai water splashing festival design with pink lotuses" },
-    "4026": { title: "Cherry Blossom Festival Japan Sakura Landscape", alt: "Stunning pink landscape filled with blooming cherry blossom trees and lanterns" },
-    "4027": { title: "Rio Carnival Colorful Feathers Festival Poster", alt: "Vibrant exotic feathers and glitter layout celebrating Brazil Rio Carnival" },
-    "4028": { title: "Harbin Ice Festival Winter Wonderland Artwork", alt: "Majestic glowing blue ice castle sculptures under frozen winter night sky" },
-    "4029": { title: "Sapporo Snow Festival Winter Landscape", alt: "Beautifully lit snow castle and winter ice sculptures in glowing city park" },
-    "4030": { title: "Albuquerque Balloon Fiesta Sky Landscape", alt: "Dozens of colorful hot air balloons floating over mountains in morning sky" },
-    "4031": { title: "Happy Midsummer Festival Floral Wreath Banner", alt: "Beautiful green forest field background with a vibrant summer flower crown wreath" },
-    "4032": { title: "Venice Carnival Traditional Italian Mask Art", alt: "Luxury style golden masquerade mask inside a grand historical Italian hall" },
-    "4033": { title: "Yi Peng Lantern Festival Chiang Mai Night", alt: "Thousands of glowing paper lanterns floating high up in the dark night sky" },
-    "4034": { title: "Moon Festival Mid Autumn MidAutumn Greeting", alt: "Beautiful traditional frame enclosing a massive bright full moon over water" },
-    "4035": { title: "Ultra Music Festival Electronic Neon Grid", alt: "Abstract futuristic stage with bright purple neon laser lines for music festival" },
-
-    // --- BATCH 6: HALLOWEEN & INDIAN PATRIOTIC (IMAGE 4) ---
-    "4036": { title: "Obon Festival Floating Paper Lanterns Night", alt: "Peaceful Japanese Obon festival scene with glowing lamps drifting on river" },
-    "4090": { title: "Happy Easter Day Colorful Eggs Basket", alt: "Charming spring background filled with colorful decorated Easter eggs and flowers" },
-    "4091": { title: "Happy Halloween Spooky Graveyard Bats Castle", alt: "Eerie pumpkin jack-o-lanterns standing in a scary graveyard under full moon" },
-    "4093": { title: "Happy St Patricks Day Golden Pot Clover", alt: "Lucky green background with a pot of gold coins and four leaf clovers" },
-    "4189": { title: "Happy Halloween Creepy Pumpkin Full Moon", alt: "Scary grinning pumpkin face glowing in a dark foggy cemetery forest night" },
-    "5157": { title: "Indian Patriotic Crowds National Flag March", alt: "Proud citizens holding a massive Indian trishul flag during national day rally" },
-    "5158": { title: "Mera Bharat Mahan Lion National Pride", alt: "Powerful lion face blended with Indian tricolor flag and national monuments" },
-    "5159": { title: "Mera Bharat Mahan Jai Hind Festival Banner", alt: "Vibrant national pride layout with Indian maps, flags and marching soldiers" },
-    "5160": { title: "Indian Army Soldier Tricolor National Pride", alt: "Saluting soldier standing proudly with glowing Indian national flag in background" },
-    "5161": { title: "Bharat Mata Indian Tricolor Flag Blessing", alt: "Divine graphic of Mother India standing proudly holding the national tricolor flag" },
-    "5162": { title: "Indian Independence Day Red Fort March", alt: "Soldier raising the Indian national flag at historical Red Fort under sunny sky" },
-    "5163": { title: "Indian Flag Flying High Dramatic Sky", alt: "Beautiful silk Indian tricolor flag fluttering proudly during a glowing sunset" },
-
-    // --- BATCH 6: INDIAN PATRIOTIC & CRYSTAL FLOWERS (IMAGE 5) ---
-    "5164": { title: "Indian Flag Space Cosmos Planet View", alt: "Epic abstract artwork showing the Indian tricolor glowing over planet earth in space" },
-    "5165": { title: "Indian National Flag Beautiful Sunset Landscape", alt: "Saffron, white and green flag waving majestically over a peaceful natural landscape" },
-    "5166": { title: "Indian Flag Texture Golden Glow Fields", alt: "Beautiful artistic presentation of the Indian tricolor flag under sun rays" },
-    "5657": { title: "Indian Soldier Tribute Bharat Mata Blessing", alt: "Emotional graphic of a brave soldier in uniform with Mother India in background" },
-    "5658": { title: "Indian Army Soldier Saluting National Flag", alt: "Silhouetted army commando saluting the Indian flag on a high mountain peak" },
-    "5659": { title: "Indian Soldier Praying National Day Tribute", alt: "Brave military officer in deep prayer position with glowing tricolor flag rays" },
-    "9669": { title: "Independence Day 4th of July American Eagle", alt: "Powerful golden eagle emblem holding text celebrating American Independence Day" },
-    "9672": { title: "Independence Day 4th of July Eagle Crest", alt: "Stunning dark graphic of a metallic eagle bird with American national pride theme" },
-    "4170": { title: "Crystal Pink Lotus Sparkles Glowing Flower", alt: "Beautiful luxury style lotus blossom made of shiny transparent diamonds glass" },
-    "6556": { title: "Crystal Blue Rose Glow In Dark Flower", alt: "Stunning fantasy sapphire blue rose flower radiating bright stardust light lines" },
-    "6558": { title: "Crystal White Rose Sparkling Glass Petals", alt: "Elegant transparent white glass flower blossom covered in metallic glitter dust" },
-    "6561": { title: "Crystal Purple Lotus Cosmic Galaxy Flower", alt: "Abstract neon purple glass lotus flower floating inside a sparkling nebula universe" },
-        
-    // --- BATCH 7 (60 IMAGES) - DESSERTS & MILKSHAKES (IMAGE 1) ---
-    "4150": { title: "Creamy Mango Milkshake Fruit Whipped Cream", alt: "Delicious sweet yellow beverage served in a luxury glass with mango slices" },
-    "4176": { title: "Coffee Beans Iced Cappuccino Splash", alt: "Energetic shot of rich brown coffee swirling out of a glass cup" },
-    "4194": { title: "Hot Chocolate Cup Marshmallows Winter", alt: "Cozy mug of warm cocoa drink topped with melting white marshmallows" },
-    "9687": { title: "Creamy Hot Cappuccino Coffee Splash Art", alt: "Beautiful dynamic spill of morning coffee out of a classic white porcelain cup" },
-    "4159": { title: "Strawberry Smoothie Milk Splash Explosion", alt: "Fresh red strawberry fruit dropping into a dynamic wave of white milk" },
-    "4177": { title: "Dark Chocolate Blocks Melting Syrup", alt: "Rich glossy liquid chocolate pouring over sweet chocolate cubes closeup" },
-    "4193": { title: "Layered Strawberry Cake Sweet Cheese Frosting", alt: "Delicious pastry dessert decorated with fresh red strawberries and cream" },
-    "9688": { title: "Chocolate Sundae Ice Cream Cherry Topping", alt: "Yummy dessert cup with layers of cream, chocolate fudge and red cherries" },
-    "8873": { title: "Fantasy Lava Sword Fiery Ancient Blade", alt: "Powerful legendary sword made of burning volcano magma stone glowing red" },
-    "8874": { title: "Ice Dragon Sword Blue Frozen Crystal", alt: "Majestic fantasy sword radiating cold white winter frost and blue lightning" },
-    "8875": { title: "Holy Paladin Sword Green Magic Aura", alt: "Mystical warrior sword glowing with bright green spiritual energy lines" },
-    "8876": { title: "Dark Overlord Greatsword Purple Nebula Storm", alt: "Eerie fantasy blade enveloped in crackling dark purple electric lines" },
-
-    // --- BATCH 7 - FRESH FRUITS & REFRESHING DRINKS (IMAGE 2) ---
-    "4092": { title: "Traditional Indian Chicken Biryani Rice Pot", alt: "Delicious aromatic long grain basmati rice dish with herbs in a copper bowl" },
-    "4094": { title: "Crispy Loaded Nachos Cheese Splash", alt: "Tasty Mexican chips covered in rich liquid yellow cheese and jalapenos" },
-    "6704": { title: "Fresh Mango Slices Cold Juice Glass", alt: "Ripe sweet orange mango fruits next to a refreshing summer drink splash" },
-    "6705": { title: "Vibrant Red Strawberries Crystal Bowl", alt: "Fresh juicy strawberries next to a glass of refreshing strawberry cocktail" },
-    "6706": { title: "Sweet Cut Pineapple Slices Juice glass", alt: "Tropical fresh pineapple setup with a cool glass of healthy summer beverage" },
-    "6707": { title: "Fresh Orange Slices Citrus Drink Glass", alt: "Juicy sweet oranges next to a sparkling glass of orange juice with mint" },
-    "6708": { title: "Fresh Cut Watermelon Slices Ice Cold Juice", alt: "Refreshing summer watermelon fruit platter with a cool glass of red drink" },
-    "3875": { title: "Cyberpunk Purple Energy Drink Can Neon", alt: "Futuristic soda can design surrounded by bright pink and violet laser rays" },
-    "3876": { title: "Tropical Fruit Cocktail Sunny Beach Island", alt: "Refreshing summer drink filled with sliced oranges and lemons near blue ocean" },
-    "3878": { title: "Blueberry Ice Cream Shake Whipped Cream", alt: "Delicious sweet purple dessert drink topped with berries in neon light" },
-    "3889": { title: "Iced Black Coffee Splash Ice Cubes", alt: "Dynamic shot of cold coffee splashing out of a glass in dark background" },
-    "3893": { title: "Matcha Green Tea Splash Whirlwind", alt: "Artistic presentation of green tea spinning out of a traditional ceramic bowl" },
-
-    // --- BATCH 7 - LUXURY FEATHERS & HOT FOOD (IMAGE 3) ---
-    "7479": { title: "Vibrant Peacock Feather Rich Canvas Painting", alt: "Artistic close up portrait of an oil painted peacock feather eye" },
-    "7480": { title: "Glowing Emerald Peacock Feather Sparks", alt: "Bioluminescent green peacock feather emitting small magic sparkles in the dark" },
-    "7481": { title: "Luxury Pink Peacock Feather Rose Gold", alt: "Stunning decorative illustration of a feather with warm gold accents" },
-    "7520": { title: "Golden Angel Feather Soft Velvet Background", alt: "Beautiful shiny single golden feather floating against a deep dark backdrop" },
-    "7522": { title: "Fiery Crimson Phoenix Feather Glow", alt: "Stunning single red feather radiating bright orange embers and smoke" },
-    "7523": { title: "Magic Emerald Green Feather Star Dust", alt: "Abstract single green leaf feather covered in glowing neon lighting lines" },
-    "3872": { title: "Indian Royal Feast Golden Palace Thali", alt: "Luxury traditional dining table setup filled with multiple tasty Indian dishes" },
-    "3874": { title: "Sweet Golden Honeycomb Honey Dripping", alt: "Beautiful close up of honeybees on a hive dripping with warm organic honey" },
-    "3894": { title: "Strawberry Cheesecake Fresh Cream Layer", alt: "Delicious slice of cream cake topped with glossy glazed red strawberries" },
-    "3897": { title: "Spicy Noodles Bowl Neon Street Light", alt: "Futuristic cyberpunk style presentation of steaming hot asian food" },
-    "3900": { title: "Double Cheese Beef Burger Crispy Fries", alt: "Mouthwatering fast food burger with melted cheese and fresh lettuce closeup" },
-    "3902": { title: "Chocolate Lava Cake Melting Fudge", alt: "Delicious warm chocolate cake dessert bursting with dark glossy chocolate sauce" },
-
-    // --- BATCH 7 - FANTASY LANDSCAPES & WATERFALLS (IMAGE 4) ---
-    "7395": { title: "Cherry Blossom Night Cosmic Waterfall", alt: "Magical night landscape with pink sakura trees and a glowing blue river" },
-    "7396": { title: "Golden Forest Autumn Water Stream", alt: "Stunning landscape art of golden leaf trees along a rocky mountain river" },
-    "8118": { title: "Magic Rose Quartz Crystal Flowers", alt: "Beautiful fantasy graphics of glowing orange crystal roses on a mountain edge" },
-    "8155": { title: "Glow In Dark Purple Rose Neon", alt: "Stunning neon purple rose flower surrounded by sparkling magical stardust" },
-    "10171": { title: "Lavender Daisies Watercolor Clean Background", alt: "Beautiful minimalist drawing of purple lavender stalks and white daisy flowers" },
-    "10172": { title: "Pink Wildflowers Bouquet Watercolor Art", alt: "Charming sketch of soft pink garden blossoms in elegant watercolor style" },
-    "3908": { title: "Magical Forest Waterfall Paradise View", alt: "Epic fantasy landscape showing dynamic water rapids cutting through golden woods" },
-    "4047": { title: "Spiritual Tree Of Life Magic River", alt: "Bioluminescent green giant tree glowing under a starry night sky artwork" },
-    "4218": { title: "Two Peacock Feathers Golden Portal", alt: "Elegant peacock feathers standing near a glowing abstract natural arch" },
-    "4226": { title: "Mystical Waterfall Magic Blue Light", alt: "Stunning interior cave scene with water cascading down into a glowing blue pool" },
-    "7476": { title: "CloseUp Peacock Feather Golden Details", alt: "Intense details of a vibrant blue and green peacock feather with golden lighting" },
-    "7478": { title: "Abstract Peacock Feather Purple Neon Grid", alt: "Luxury style dark background with a single glowing metallic purple feather" },
-
-    // --- BATCH 7 - SUNFLOWERS & BLOOMING VASES (IMAGE 5) ---
-    "6562": { title: "Beautiful Pink Cherry Blossom Branch", alt: "Soft pink sakura flower buds covered in morning dew drops watercolor background" },
-    "6688": { title: "Golden Rose Bouquet Vintage Luxury", alt: "Elegant rich golden rose flowers surrounded by deep dark leaves graphic" },
-    "6689": { title: "Glowing Marigold Flowers Sun Rays", alt: "Beautiful orange and yellow marigold flowers shining in warm golden sunlight" },
-    "6691": { title: "Golden Sunflower Field Sunset Landscape", alt: "Stunning landscape view of bright sunflowers stretching towards a warm golden horizon" },
-    "6827": { title: "White Lily Red Rose Flower Vase", alt: "Elegant bouquet of blooming white lilies and dark red roses in a black vase" },
-    "6828": { title: "Pink Peonies White Roses Flower Bouquet", alt: "Beautiful luxurious floral arrangement of pink and white roses in a modern pot" },
-    "6829": { title: "Bright Sunflowers Bouquet Table Decor", alt: "Cheerful bunch of yellow sunflowers mixed with small purple blossoms in a vase" },
-    "6830": { title: "Pink Cherry Blossom Floral Vase Design", alt: "Lovely display of delicate pink sakura branches blooming inside a dark room" },
-    "6831": { title: "Blue Hydrangea White Rose Flower Pot", alt: "Stunning floral setup featuring rich blue hydrangeas and elegant white roses" },
-    "6832": { title: "Red Tulips Yellow Daffodils Bouquet", alt: "Vibrant and colorful spring flower arrangement of fresh red and yellow blooms" },
-    "7160": { title: "Wildflowers Watercolor Painting Clean Background", alt: "Delicate artistic sketch of colorful daisies and wildflowers on a white backdrop" },
-    "7394": { title: "Glowing White Lotus Magic Pond", alt: "Bioluminescent white lotus flower floating in an emerald green fantasy pool" },
-        
-    // --- BATCH 8: FANTASY PLACES & ARCHITECTURE (IMAGE 1) ---
-    "8877": { title: "Sci Fi Grim Reaper Scythe Laser Blade", alt: "Advanced mecha scythe weapon glowing with bright neon blue lines in darkness" },
-    "3833": { title: "Ancient Sun Temple Desert Oasis View", alt: "Stunning architectural fantasy art of a grand temple hidden in sandy canyons" },
-    "3834": { title: "Cyberpunk City Skyline Purple Neon Streets", alt: "Futuristic metropolis with towering skyscrapers and glowing pink traffic roads" },
-    "3835": { title: "Floating Castle Waterfalls Elven Kingdom Art", alt: "Stunning fantasy landscape of white palaces floating in clouds above lakes" },
-    "3836": { title: "Cyberpunk Factory Glowing Industrial Grid", alt: "Futuristic mecha facility illuminated with bright orange lava and copper tubes" },
-    "3905": { title: "Golden Path To Heaven Stairway Clouds", alt: "Spiritual dream art showing a grand staircase leading into bright divine light" },
-    "3988": { title: "Mystical Magic Portal Golden Woods Landscape", alt: "Fantasy stone arch glowing with ancient purple runes in a forest at sunset" },
-    "3990": { title: "Ancient Stone Astronomical Clock Mountain Temple", alt: "Massive vintage clock tower mechanism standing high above white clouds" },
-    "4008": { title: "Cosmic Nebula Tree Milky Way Night", alt: "Beautiful landscape showing a large magical tree under a swirling galaxy sky" },
-    "4010": { title: "Golden Tree Of Life Starry Galaxy Night", alt: "Majestic fantasy tree glowing with bright yellow stardust lines in space" },
-    "4011": { title: "Staircase To Full Moon Gothic Castle Night", alt: "Creepy dark stone steps leading high up towards a massive white moon" },
-    "4013": { title: "Cozy Library Wooden Bookshelves Lantern Warmth", alt: "Vintage secret room filled with thousands of books and a glowing candle light" },
-
-    // --- BATCH 8: FLOATING ISLANDS & NEON SHAPES (IMAGE 2) ---
-    "4038": { title: "Floating Island Green Castle Fantasy Landscape", alt: "Beautiful green mountain tops floating high in the sky with waterfalls" },
-    "4039": { title: "Bioluminescent Crystal Cave Underground Lake", alt: "Stunning hidden cave filled with glowing blue stalactites and clear pool" },
-    "4046": { title: "Cyber Mecha Space Station Golden Ring", alt: "Futuristic advanced satellite base floating in dark starry cosmos universe" },
-    "4048": { title: "Crystal Castle Clouds Heaven Citadel Art", alt: "Majestic transparent white palace standing high up in the blue sky landscape" },
-    "4217": { title: "Golden Arabic Palace Ancient Arch Sunset", alt: "Stunning middle eastern architecture view with beautiful warm sun rays" },
-    "4221": { title: "Volcano Forge Cave Melting Gold Magma", alt: "Dreadful dark cavern filled with glowing orange liquid stone and smoke" },
-    "3832": { title: "Abstract Blue Cyber Matrix Tunnel Laser", alt: "Sci-fi background with bright blue neon digital code data streams" },
-    "3837": { title: "Futuristic Racing F1 Mecha Sports Car Neon", alt: "Cool red racing car speeding on a wet cyberpunk street at night" },
-    "3838": { title: "Glowing Neon Basketball Fire Hoop Grid", alt: "Abstract digital art of a burning sports ball flying into a bright hoop" },
-    "3857": { title: "Cyberpunk Stadium Grid Laser Show Stage", alt: "Futuristic sports arena lit up with intense blue neon spot spotlights" },
-    "3868": { title: "Abstract Chess Pieces Metallic Mirror Reflection", alt: "Elegant shiny silver and gold chess board design in dark background" },
-    "3870": { title: "Abstract Burning Planet Cosmos Supernova", alt: "Epic space explosion graphic of a planet cracking with red fiery lines" },
-
-    // --- BATCH 8: Cosmic PLANETS & Geometric 3D SHAPES (IMAGE 3) ---
-    "3871": { title: "Abstract Ice Planet Frost Cosmic Rings", alt: "Stunning blue frozen planet floating in deep space with bright starry nebula" },
-    "3911": { title: "Cosmic Dark Planet Purple Neon Aurora", alt: "Mysterious violet gas planet surrounded by shiny cosmic dust rings in space" },
-    "3918": { title: "Geometric 3D Forms Pastel Marble Display", alt: "Minimalist luxury background with spheres, cones and cubes on a pink podium" },
-    "3920": { title: "Abstract Minimalist Arch Concrete Studio Backdrop", alt: "Modern architectural product background with brown stairs and shadows" },
-    "3921": { title: "Origami Paper Crane Birds Clouds Landscape", alt: "Beautiful clean graphic of geometric paper birds flying in a soft sky" },
-    "3989": { title: "Abstract Golden Web Network Laser Background", alt: "Luxury style mesh structure made of bright glowing orange lines" },
-    "4012": { title: "Abstract Desert Horizon Cosmic Solar Eclipse", alt: "Stunning dream landscape showing a massive planet rising over orange dunes" },
-    "4041": { title: "Abstract Liquid Chrome Melted Glass Splash", alt: "Futuristic 3D presentation of glossy silver metallic ripples in dark space" },
-    "4043": { title: "Abstract Cosmic Wormhole Vortex Purple Energy", alt: "Dynamic spiral tunnel made of glowing violet neon stardust waves" },
-    "4044": { title: "Golden Lightning Cracks Black Marble Texture", alt: "Luxury background graphic with sharp glowing yellow cracks on a dark wall" },
-    "4050": { title: "Abstract Golden Fire Trophy Burning Cup", alt: "Stunning 3D digital sculpture of a bright blazing cup made of light bars" },
-    "4081": { title: "Abstract Transparent Glass Rings Silver Metallic", alt: "Beautiful 3D graphic showing shiny reflective chrome loops floating in air" },
-
-    // --- BATCH 8: CRYSTAL GLASS & GIFT BOXES (IMAGE 4) ---
-    "4154": { title: "Abstract Blue Ocean Wave Glass Sculpture", alt: "Stunning transparent water splash made of glossy shiny sapphire crystals" },
-    "4166": { title: "Crystal Ice Cubes Sparkling Clear Glass", alt: "Beautiful pile of shiny diamond cut ice blocks radiating blue stardust lines" },
-    "4174": { title: "Abstract 3D Crystal Cube Prism Laser", alt: "Geometric transparent glass block reflecting bright pink and cyan neon rays" },
-    "4175": { title: "Crystal Diamond Butterfly Shiny Glass Wings", alt: "Stunning colorful glass butterfly floating over a sparkling bokeh background" },
-    "4178": { title: "Futuristic White Corridor Sci-Fi Tunnel Lights", alt: "Clean modern design showing a long hall filled with bright neon lines" },
-    "4182": { title: "Abstract Golden Spheres Luxury Velvet Studio", alt: "Elegant product display backdrop with shiny metallic balls and clean shadows" },
-    "4184": { title: "Green Marble Arch Palm Leaves Shadow", alt: "Beautiful tropical background with fresh green steps and luxury golden details" },
-    "4195": { title: "Abstract Saturn Planet Golden Rings Space", alt: "Epic space art showing a massive brown gas planet surrounded by stardust" },
-    "5815": { title: "Luxury Black Gift Boxes Golden Ribbon Bow", alt: "Elegant Christmas holiday background with beautiful black wrapped boxes" },
-    "9366": { title: "Abstract Christmas Tree Snow Globe Lantern", alt: "Beautiful winter scene with a glowing snowy pine tree inside a golden frame" },
-    "9682": { title: "Luxury Purple Stage Sparkling Pearl Garland", alt: "Elegant podium background with lavender shiny beads and warm bokeh lights" },
-    "9683": { title: "Abstract Cream Silk Waves Satin Texture", alt: "Soft beautiful background template made of flowing luxury fabric lines" },
-
-    // --- BATCH 8: CHESS & WORLD IN A BOTTLE (IMAGE 5) ---
-    "9685": { title: "Golden Chess King Piece Mirror Reflection", alt: "Luxury style gold chess king standing tall on a shiny black board" },
-    "9686": { title: "Abstract Glass Sphere Space Constellation Nebula", alt: "Beautiful crystal ball enclosing a miniature blue galaxy universe planet" },
-    "10175": { title: "Abstract Dark Blue Satin Wave Lines", alt: "Minimalist background graphic with smooth sleek curves and gold dust trails" },
-    "4151": { title: "Luxury Golden Round Stage Empty Podium", alt: "Stunning gold presentation display base under bright yellow stardust lines" },
-    "4156": { title: "Minimalist Stones Balance Zen Palm Shadow", alt: "Peaceful spa background with stacked pebbles and soft beige colors" },
-    "4179": { title: "Luxury Perfume Bottle Purple Flower Pedestal", alt: "Beautiful product display background filled with lavender blossom petals" },
-    "6753": { title: "Vintage Sailing Ship In A Glass Bottle", alt: "Beautiful detailed miniature artwork of a pirate boat floating inside glass" },
-    "6754": { title: "Cozy Stone Cottage In A Glass Bottle", alt: "Charming fantasy drawing of a tiny village house hidden inside a vintage jar" },
-    "6755": { title: "Historical Lighthouse Sea In A Glass Bottle", alt: "Stunning miniature art showing ocean waves and a beacon tower inside a bottle" },
-    "6756": { title: "Hot Air Balloon Sky In A Glass Bottle", alt: "Lovely artwork of a colorful balloon floating among clouds inside a retro jar" },
-    "6757": { title: "Lonely Island Lighthouse In A Glass Bottle", alt: "Beautiful ocean waves and rocky cliff beacon inside a transparent bottle" },
-    "8010": { title: "Fantasy Autumn Forest River In A Glass Bottle", alt: "Amazing miniature scene of golden trees and a natural creek inside a clear jar" },
-    
-    // --- FINAL BATCH: LUXURY LOGOS & LETTERS (IMAGE 1) ---
-    "6779": { title: "Aurelix Golden Lion Regal Logo Emblem", alt: "Luxury gold lion head shield badge design with typography on black background" },
-    "6780": { title: "Nexore Golden Wolf Crest Mascot Shield", alt: "Elegant golden wolf head luxury logo design vector icon illustration" },
-    "6781": { title: "Velore Noir Golden Eagle Wings Emblem", alt: "Royal style majestic golden eagle crown badge illustration on dark background" },
-    "6782": { title: "Valterion Golden Tiger Luxury Crest Logo", alt: "Powerful gold line art tiger head shield badge icon for premium branding" },
-    "7449": { title: "Rose Gold Luxury Beauty Studio Logo Background", alt: "Elegant shiny rose gold abstract typography sign for premium makeup salon" },
-    "7450": { title: "Veloura Cosmetics Rose Gold Glitter Banner", alt: "Luxury metallic makeup branding backdrop with sparkling script lettering" },
-    "7451": { title: "Lumina Glow Salon Elegant Foil Typography", alt: "Charming pastel pink background with metallic gold luxury script logo" },
-    "7452": { title: "Bloom Aesthetics Rose Gold Floral Backdrop", alt: "Premium metallic texture layout with shiny script font for skin care brand" },
-    "8136": { title: "Letter A Fire Skull Dark Throne Art", alt: "Gothic style glowing red alphabet letter A surrounded by fantasy warrior armor" },
-    "8137": { title: "Letter S Ice Dragon Glowing Crown Badge", alt: "Spiritual neon blue alphabet letter S inside a majestic sapphire shield frame" },
-    "8138": { title: "Letter K Forest Magic Green Wizard Aura", alt: "Mystical alphabet letter K glowing with bright green emerald energy lines" },
-    "8139": { title: "Letter R Purple Nebula Sorceress Throne", alt: "Eerie abstract alphabet letter R radiating bright violet celestial magic smoke" },
-
-    // --- FINAL BATCH: ABSTRACT FLUIDS & SHIMMER (IMAGE 2) ---
-    "10389": { title: "Pastel Holographic Liquid Wave Shimmer Art", alt: "Beautiful abstract presentation of soft pink and blue fluid marble ripples" },
-    "10390": { title: "Metallic Silver Chrome Liquid Ripple Backdrop", alt: "Futuristic background graphic with glossy reflective silver fluid waves" },
-    "10391": { title: "Abstract Pastel Clouds Golden Dust Glitter", alt: "Lovely soft background template with pink cream swirls and metallic sparkles" },
-    "10392": { title: "Luxury Gold Silk Liquid Satin Waves", alt: "Stunning metallic gold fluid marble texture layout with clean shiny curves" },
-    "10393": { title: "Bioluminescent Crystal Lotus Glowing Galaxy Water", alt: "Stunning cosmic flower radiating bright blue and pink stardust particles" },
-    "10394": { title: "Abstract Blue Cyber Fluid Matrix Stripes", alt: "Sci-fi background with wavy neon cyan and silver digital data lines" },
-    "10395": { title: "Fantasy Flower Garden Floating Castle Shimmer", alt: "Beautiful dream landscape drawing with soft pastel colors and stardust clouds" },
-    "10396": { title: "Abstract Cosmic Wave Dark Red Blue Liquid", alt: "Epic luxury style fluid marble background with glowing gold metallic lines" },
-    "10398": { title: "Abstract Cyber Matrix Liquid Neon Aurora", alt: "Futuristic mecha style background with glowing cyan and purple wave shapes" },
-    "10399": { title: "Sparkling Glitter Butterflies Pastel Bokeh Field", alt: "Beautiful romantic illustration with shiny diamond butterflies floating in air" },
-    "10400": { title: "Abstract Neon Purple Wave Digital Matrix", alt: "Futuristic neon background with layered violet and pink wavy line arts" },
-    "10401": { title: "Metallic Holographic Fluid Wave Chrome Ripples", alt: "Stunning sitemap background with multi colored iridescent mirror gradients" },
-
-    // --- FINAL BATCH: MAGIC WINDOWS & 3D CARVINGS (IMAGE 3) ---
-    "10402": { title: "Abstract Pastel Fluid Marble Silk Waves", alt: "Soft beautiful background template with light violet and pink smooth lines" },
-    "10403": { title: "Abstract Dark Cyber Wave Green Laser Lines", alt: "Sci-fi background texture with wavy neon green and purple data shapes" },
-    "10404": { title: "Sartorial Pastel Wave Iridescent Satin Texture", alt: "Beautiful elegant abstract background with soft rainbow gradients fluid curves" },
-    "10405": { title: "Dark Luxury Black Marble Golden Cracks Wave", alt: "Stunning black abstract background with shiny metallic silver fluid lines" },
-    "10406": { title: "Abstract Deep Ocean Liquid Sapphire Waves", alt: "Beautiful dark blue fluid marble layout with glossy metallic highlights" },
-    "6769": { title: "Magical Palace Garden Sun Rays Vintage Frame", alt: "Fantasy stone window arch opening into a golden autumn forest view" },
-    "6770": { title: "Fantasy Waterfall Paradise Magic Arch Window", alt: "Stunning view of a purple floral valley and crystal water rapids through a door" },
-    "6771": { title: "Mystical Cherry Blossom Castle Sunset Window", alt: "Beautiful pink landscape view under glowing sun rays through a stone portal" },
-    "6772": { title: "Gothic Secret Forest Full Moon Arch Gate", alt: "Creepy dark stone window frame showing a green glowing ancient woods night" },
-    "7407": { title: "White 3D Rose Flower Carving Wall Relief", alt: "Luxury style white clay sculpture portrait of blooming roses closeup" },
-    "7408": { title: "Elegant 3D Floral Mandala Plaster Pattern", alt: "Beautiful decorative white stone carving layout with detailed flower graphics" },
-    "7409": { title: "Luxury White Baroque Flower Bouquet Wall Sculpt", alt: "Stunning interior plaster art design with highly detailed 3D white roses" }
-};
-             
-   // इमेज का यूनीक डेटा निकालना (अगर किसी इमेज का डेटा न मिले तो बैकअप नाम दिखाना)
-        const imgData = imageDetails[num] || {
-            title: `Amazing AI Wallpaper ${num}`,
-            alt: `High quality digital graphic illustration artwork number ${num}`
+        const categories = {
+            gods: ["4087","4894","4896","5002","5003","5004","5008","5009","5010","5012","5013","5014","5118","5120","5126","7727","7728","7729","8011","8012","8013","8014","9650","9651","9652","9676","9677","3036","4008","4010","4011","4012","4015","4919","4020","4926","4927","5119","5121","5122","5124","5125","9655","9659","9662","3825","3826","3909","3934","4004","9656"],
+            characters: ["10728","10725","10729","10730","10737","10738","10740","10739","10741","10742","10743","10711","10709","10707","10710","8158","8159","8160","8161","8162","8263","8264","8265","8266","8267","8268","8269","8270","8271","8373","8626","9369","9370","9373","9374","9375","9378","9379","10174","10467","10468","10469","10470","10471","10472","10473","10474","10475","10476","10477","10478","10479","4045","8068","8069","8070","8071","8072","8880","8881","8882","8883","8884","8624","8625","8627","8628","10201","10202","10219","10221","10222","10224","10233","10234","10235","10236","10237","10238","10239","10259","10260","4054"],
+            animals: ["3828","3829","3830","3831","3906","3907","4037","4049","4051","4052","4053","4227","4229","6595","6596","6719","6720","6722","6799","6800","6801","6802","7399","7401","7404","7416","7516","8257","8258","8259","8260","8420","9681","9684","9689","3903","3904","3912","4208","6693","6694","6695","6696","6700","6701","6702","6703","6721","7402","7403","7417","3869","6725","6726","6727","6728","6729","6812","6813","6814","6815","6816","7513","8256","9690","9691","9692","9693","9694"],
+            love: ["4953","4956","4957","4958","4959","4960","4961","4962","4963","4964","4965","4966","5579","5580","9667","9668","9673","6589","6640","6641","6642","6644","6645","6646","6682","6683","6684","6685","7597","7598","7599","7600","7602","7603","7604","7605","7606","9683","9666","9674","9678"],
+            events: ["3823","3930","3932","3933","3935","3937","3938","3939","3940","3941","3943","3950","3951","3954","3955","3956","3957","3958","3959","3960","3961","3962","3963","3964","3965","4014","4015","4017","4018","4019","4085","4086","4088","4089","4006","4098","4185","3923","3924","3925","3926","4023","4024","4025","4026","4027","4028","4029","4030","4031","4032","4033","4034","4035","4036","4000","4091","4003","4189","5157","5158","5159","5160","5161","5162","5163","5164","5165","5166","5657","5658","5659","5660","9672"],
+            nature: ["4170","6556","6558","6561","6687","6688","6689","6691","6827","6828","6829","6830","6831","6832","7160","7304","7395","7396","8118","8155","10171","10172","3908","4047","4218","4226","7476","7478","7479","7480","7481","7520","7522","7523"],
+            food: ["3872","3874","3894","3897","3900","3902","4092","4094","6704","6705","6706","6707","6708","3875","3876","3878","3889","3893","4150","4176","4196","0687","4159","4177","4193","9688"],
+            weapons: ["8873","8874","8875","8876","8877"],
+            places: ["3833","3834","3835","3836","3005","3088","3900","4008","4010","4011","4013","4038","4039","4040","4048","4217","4221"],
+            abstract: ["3832","3837","3838","3857","3868","3870","3871","3911","3918","3920","3921","3969","4012","4041","4043","4044","4050","4081","4154","4166","4174","4175","4178","4182","4184","4195","9365","9366","9682","9683","9685","9686","10175","4151","4156","4179","6753","6754","6755","6756","6757","8010","6779","6780","6781","6782","7409","7450","7451","7452","8136","8137","8138","8130","10380","10390","10301","10302","10303","10304","10395","10396","10398","10399","10400","10401","10402","10403","6769","6770","6771","6772","7407","7408","7409"]
         };
 
-const card = document.createElement('div');
-card.className = 'card';
-card.onclick = () => openModal(num); 
+        const categoryTemplates = {
+            gods: "Lord Shiva Bholenath Krishna Hanuman Ji Hindu Gods Mythology Spiritual Photo Pic",
+            characters: "Anime Ninja Samurai Soldier Cyberpunk Warrior Character Art Boy Girl Cartoon Gaming",
+            animals: "Mythical Creature Wild Animal Fantasy Lion Tiger Wolf Magical Aesthetic Background",
+            love: "Romantic Couple Love Family Cute Creative Valentine Day Relationship Status",
+            events: "Indian Festival Patriotic Celebration Happy Diwali Holi Independence Day Wishes",
+            nature: "Nature Landscape Flower Feather Aesthetic Beautiful Scenery Mountain River Sky",
+            food: "Delicious Food Drinks Dessert Creative Art Cake Burger Pizza Mocktail",
+            weapons: "Fantasy Weapon Sword Shield Magical 3D Gun Pubg Freefire Gaming Tool",
+            places: "Architecture Beautiful Places Travel Scenery TajMahal Temple Historical Building",
+            abstract: "Abstract 3D Bottle Design Neon Art Creative Modern Background Geometric"
+        };
 
-// अब यहाँ हमारे बनाए हुए यूनीक Alt और Title बिल्कुल सही तरीके से काम करेंगे
-        card.innerHTML = `
-            <img src="${IMAGE_BASE_URL}${num}.webp" 
-                 alt="${imgData.alt}" 
-                 title="${imgData.title}" 
-                 loading="lazy">
-            <div class="card-info">
-                <p class="card-title">${imgData.title}</p>
-            </div>
-        `;
-    
-    
-    galleryGrid.appendChild(card);
-});
-        
+        let currentFilteredList = [...imageList];
+        let currentPage = 1;
+        const itemsPerPage = 12;
 
-        updatePaginationControls(currentFilteredList.length);
-    }
+        const galleryGrid = document.getElementById('galleryGrid');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        const downloadBtn = document.getElementById('downloadBtn');
 
-    // पेज बदलने और बटन्स को मैनेज करने का फंक्शन
-    function updatePaginationControls(totalItems) {
+        function loadGallery() {
+            galleryGrid.innerHTML = "";
 
-    const totalPages =
-        Math.ceil(totalItems / itemsPerPage);
+            if (currentFilteredList.length === 0) {
+                galleryGrid.innerHTML = "<p style='grid-column: 1/-1; text-align:center; color:#8998ad;'>No Wallpapers Found</p>";
+                updatePaginationControls();
+                return;
+            }
 
-    document.getElementById('pageInfo').innerText =
-        totalItems === 0
-            ? 'No Pages'
-            : `Page ${currentPage} of ${totalPages}`;
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = Math.min(startIndex + itemsPerPage, currentFilteredList.length);
+            const itemsToDisplay = currentFilteredList.slice(startIndex, endIndex);
 
-    document.getElementById('prevBtn').disabled =
-        currentPage <= 1;
+            itemsToDisplay.forEach(num => {
+                let currentCat = "abstract";
+                for (const [catName, catArray] of Object.entries(categories)) {
+                    if (catArray.includes(String(num)) || catArray.includes(Number(num))) {
+                        currentCat = catName;
+                        break;
+                    }
+                }
 
-    document.getElementById('nextBtn').disabled =
-        totalItems === 0 || currentPage >= totalPages;
-    }
-    function goToPage() {
+                const baseKeywords = categoryTemplates[currentCat] || "Premium Creative Art Graphics Background";
+                const seoKeyword = `Wallpaper ${num} ${baseKeywords} 4K HD Free Download`;
 
-    const pageInput =
-        document.getElementById('pageSearch');
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.onclick = () => openModal(num, seoKeyword);
 
-    const requestedPage =
-        parseInt(pageInput.value);
+                const imgUrl = `${IMAGE_BASE_URL}${num}.webp`;
 
-    const totalPages =
-        Math.ceil(
-            currentFilteredList.length / itemsPerPage
-        );
+                card.innerHTML = `
+                    <img src="${imgUrl}" alt="${seoKeyword}" title="${seoKeyword}" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x400?text=Image+Not+Found';">
+                    <div class="card-info">
+                        <p class="card-title">Wallpaper #${num}</p>
+                    </div>
+                `;
 
-    if (
-        isNaN(requestedPage) ||
-        requestedPage < 1 ||
-        requestedPage > totalPages
-    ) {
-        alert(`Please enter a page number between 1 and ${totalPages}`);
-        return;
-    }
-
-    currentPage = requestedPage;
-
-    loadGallery();
-
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-
-    pageInput.value = "";
-    }
-
-    function changePage(direction) {
-
-    const totalPages = Math.ceil(
-        currentFilteredList.length / itemsPerPage
-    );
-
-    const newPage = currentPage + direction;
-
-    if (newPage < 1 || newPage > totalPages) {
-        return;
-    }
-
-    currentPage = newPage;
-
-    loadGallery();
-
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-        }
-
-    // लाइव सर्च फ़िल्टर
-    let currentCategory = "all";
-
-function selectCategory(category, button) {
-
-    currentCategory = category;
-    currentPage = 1;
-
-    document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-
-    button.classList.add('active');
-
-    filterImages();
-}
-
-function filterImages() {
-
-    const query = document
-        .getElementById('searchBar')
-        .value
-        .trim();
-
-    let sourceList = imagelist;
-
-    if (
-        currentCategory !== "all" &&
-        categories[currentCategory]
-    ) {
-        sourceList = categories[currentCategory];
-    }
-
-    currentFilteredList = sourceList.filter(num =>
-        String(num).includes(query)
-    );
-
-    currentPage = 1;
-
-    loadGallery();
-}
-
-// डाउनलोड बटन को 100% वर्किंग बनाने के लिए Modal ओपन फंक्शन
-function openModal(num) {
-    const fileUrl = `${IMAGE_BASE_URL}${num}.webp`;
-    modalImg.src = fileUrl;
-
-    // डाउनलोड बटन को डायरेक्ट फोन में सेव करने के लिए कोड
-    downloadBtn.onclick = (e) => {
-        e.preventDefault();
-
-        fetch(fileUrl)
-            .then(response => response.blob())
-            .then(blob => {
-                const blobURL = URL.createObjectURL(blob);
-                const tempAnchor = document.createElement('a');
-
-                tempAnchor.href = blobURL;
-                tempAnchor.setAttribute('download', `Wallpaper-${num}.webp`);
-
-                document.body.appendChild(tempAnchor);
-                tempAnchor.click();
-                document.body.removeChild(tempAnchor);
-
-                URL.revokeObjectURL(blobURL);
-            })
-            .catch(err => {
-                window.open(fileUrl, '_blank');
+                galleryGrid.appendChild(card);
             });
-    };
 
-    modal.classList.add('active');
-}
-
-    function closeModal() {
-        modal.classList.remove('active');
-    }
-    async function convertImage(format) {
-    const input = document.getElementById('imageUpload');
-    const files = Array.from(input.files);
-
-    if (files.length === 0) {
-        alert('Please select images first.');
-        return;
-    }
-
-    if (files.length > 50) {
-        alert('Please select maximum 50 images at a time.');
-        return;
-    }
-
-    let extension = 'jpg';
-
-    if (format === 'image/png') {
-        extension = 'png';
-    } else if (format === 'image/webp') {
-        extension = 'webp';
-    }
-
-    // Images ek-ek karke convert hongi,
-    // isliye ek saath 50 images se website par heavy load nahi padega.
-    for (const file of files) {
-
-        await new Promise((resolve) => {
-            const reader = new FileReader();
-
-            reader.onload = function(event) {
-                const img = new Image();
-
-                img.onload = function() {
-                    const canvas =
-                        document.createElement('canvas');
-
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-
-                    const ctx = canvas.getContext('2d');
-
-                    // JPG ke liye transparent background white
-                    if (format === 'image/jpeg') {
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillRect(
-                            0,
-                            0,
-                            canvas.width,
-                            canvas.height
-                        );
-                    }
-
-                    ctx.drawImage(img, 0, 0);
-
-                    canvas.toBlob(function(blob) {
-
-                        if (!blob) {
-                            resolve();
-                            return;
-                        }
-
-                        const url =
-                            URL.createObjectURL(blob);
-
-                        const link =
-                            document.createElement('a');
-
-                        const fileName =
-                            file.name.replace(/\.[^/.]+$/, '');
-
-                        link.href = url;
-                        link.download =
-                            `${fileName}.${extension}`;
-
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-
-                        setTimeout(() => {
-                            URL.revokeObjectURL(url);
-                            resolve();
-                        }, 300);
-
-                    }, format, 0.95);
-                };
-
-                img.onerror = function() {
-                    resolve();
-                };
-
-                img.src = event.target.result;
-            };
-
-            reader.readAsDataURL(file);
-        });
-    }
-
-    input.value = '';
-                            }
-    async function compressImage(format) {
-
-    const input =
-        document.getElementById('compressUpload');
-
-    const files =
-        Array.from(input.files);
-
-    if (files.length === 0) {
-        alert('Please select images first.');
-        return;
-    }
-
-    if (files.length > 50) {
-        alert(
-            'Please select maximum 50 images at a time.'
-        );
-        return;
-    }
-
-    let extension = 'jpg';
-
-    if (format === 'image/png') {
-        extension = 'png';
-    }
-
-    if (format === 'image/webp') {
-        extension = 'webp';
-    }
-
-    for (const file of files) {
-
-        await new Promise((resolve) => {
-
-            const reader =
-                new FileReader();
-
-            reader.onload = function(event) {
-
-                const img =
-                    new Image();
-
-                img.onload = function() {
-
-                    const canvas =
-                        document.createElement('canvas');
-
-                    const maxWidth = 1920;
-
-                    const scale =
-                        Math.min(
-                            1,
-                            maxWidth / img.width
-                        );
-
-                    canvas.width =
-                        Math.round(
-                            img.width * scale
-                        );
-
-                    canvas.height =
-                        Math.round(
-                            img.height * scale
-                        );
-
-                    const ctx =
-                        canvas.getContext('2d');
-
-                    if (
-                        format === 'image/jpeg'
-                    ) {
-
-                        ctx.fillStyle =
-                            '#ffffff';
-
-                        ctx.fillRect(
-                            0,
-                            0,
-                            canvas.width,
-                            canvas.height
-                        );
-                    }
-
-                    ctx.drawImage(
-                        img,
-                        0,
-                        0,
-                        canvas.width,
-                        canvas.height
-                    );
-
-                    const quality =
-                        format === 'image/png'
-                            ? undefined
-                            : 0.7;
-
-                    canvas.toBlob(
-                        function(blob) {
-
-                            if (!blob) {
-                                resolve();
-                                return;
-                            }
-
-                            const url =
-                                URL.createObjectURL(
-                                    blob
-                                );
-
-                            const link =
-                                document.createElement(
-                                    'a'
-                                );
-
-                            const fileName =
-                                file.name.replace(
-                                    /\.[^/.]+$/,
-                                    ''
-                                );
-
-                            link.href = url;
-
-                            link.download =
-                                `compressed-${fileName}.${extension}`;
-
-                            document.body.appendChild(
-                                link
-                            );
-
-                            link.click();
-
-                            document.body.removeChild(
-                                link
-                            );
-
-                            setTimeout(
-                                () => {
-
-                                    URL.revokeObjectURL(
-                                        url
-                                    );
-
-                                    resolve();
-
-                                },
-                                300
-                            );
-
-                        },
-                        format,
-                        quality
-                    );
-
-                };
-
-                img.onerror = function() {
-                    resolve();
-                };
-
-                img.src =
-                    event.target.result;
-
-            };
-
-            reader.readAsDataURL(file);
-
-        });
-
-    }
-
-    input.value = '';
-
+            updatePaginationControls();
         }
-    function resizeImage() {
-    const input = document.getElementById('resizeUpload');
-    const widthInput = document.getElementById('resizeWidth');
-    const heightInput = document.getElementById('resizeHeight');
 
-    if (!input.files || !input.files[0]) {
-        alert('Please select an image first.');
-        return;
-    }
+        function updatePaginationControls() {
+            const totalPages = Math.ceil(currentFilteredList.length / itemsPerPage) || 1;
+            document.getElementById('pageInfo').innerText = `Page ${currentPage} of ${totalPages}`;
+            document.getElementById('prevBtn').disabled = (currentPage === 1);
+            document.getElementById('nextBtn').disabled = (currentPage >= totalPages);
+        }
 
-    const width = parseInt(widthInput.value);
-    const height = parseInt(heightInput.value);
+        function changePage(direction) {
+            currentPage += direction;
+            loadGallery();
+            window.scrollTo({ top: 500, behavior: 'smooth' });
+        }
 
-    if (!width || !height || width < 1 || height < 1) {
-        alert('Please enter valid width and height.');
-        return;
-    }
+        function jumpToPage() {
+            const pageInput = document.getElementById('pageJumpInput').value;
+            const totalPages = Math.ceil(currentFilteredList.length / itemsPerPage) || 1;
+            const pageNum = parseInt(pageInput);
 
-    const file = input.files[0];
-    const reader = new FileReader();
+            if (pageNum >= 1 && pageNum <= totalPages) {
+                currentPage = pageNum;
+                loadGallery();
+            } else {
+                alert(`Please enter a valid page number between 1 and ${totalPages}`);
+            }
+        }
 
-    reader.onload = function(event) {
-        const img = new Image();
+        function filterCategory(catKey, btnElement) {
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
 
-        img.onload = function() {
-            const canvas = document.createElement('canvas');
+            if (catKey === 'all') {
+                currentFilteredList = [...imageList];
+            } else {
+                currentFilteredList = categories[catKey] || [];
+            }
 
-            canvas.width = width;
-            canvas.height = height;
+            currentPage = 1;
+            loadGallery();
+        }
 
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0, width, height);
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            if (query === "") {
+                currentFilteredList = [...imageList];
+            } else {
+                currentFilteredList = imageList.filter(num => num.includes(query));
+            }
+            currentPage = 1;
+            loadGallery();
+        });
 
-            canvas.toBlob(function(blob) {
-                const url = URL.createObjectURL(blob);
+        function openModal(num, seoTitle) {
+            const imgUrl = `${IMAGE_BASE_URL}${num}.webp`;
+            modalImg.src = imgUrl;
+            modalImg.alt = seoTitle || `AI Wallpaper #${num}`;
+            modalImg.title = seoTitle || `AI Wallpaper #${num}`;
+            downloadBtn.href = imgUrl;
+            modal.classList.add('active');
+        }
 
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = `resized-image-${width}x${height}.png`;
+        function closeModal() {
+            modal.classList.remove('active');
+        }
 
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
 
-                URL.revokeObjectURL(url);
-            }, 'image/png');
-        };
-
-        img.src = event.target.result;
-    };
-
-    reader.readAsDataURL(file);
-    }
-
-    // पहली बार वेबसाइट खुलने पर गैलरी लोड करना
-filterImages();
-</script>
+        loadGallery();
+    </script>
 </body>
 </html>
-
