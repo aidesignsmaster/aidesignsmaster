@@ -1472,25 +1472,26 @@ const imageDetails = {
 };
              
    // इमेज का यूनीक डेटा निकालना (अगर किसी इमेज का डेटा न मिले तो बैकअप नाम दिखाना)
-const imgData = imageDetails[num] || {
-    title: (`)Amazing AI Wallpaper ${num}(`),
-    alt: (`)High quality digital graphic illustration artwork number ${num}(`)
-};
+        const imgData = imageDetails[num] || {
+            title: `Amazing AI Wallpaper ${num}`,
+            alt: `High quality digital graphic illustration artwork number ${num}`
+        };
 
 const card = document.createElement('div');
 card.className = 'card';
 card.onclick = () => openModal(num); 
 
 // अब यहाँ हमारे बनाए हुए यूनीक Alt और Title बिल्कुल सही तरीके से काम करेंगे
-card.innerHTML = `
-    <img src="${IMAGE_BASE_URL}${num}.webp" 
-         alt="${imgData.alt}" 
-         title="${imgData.title}" 
-         loading="lazy">
-    <div class="card-info">
-        <p class="card-title">${imgData.title}</p>
-    </div>
-`;
+        card.innerHTML = `
+            <img src="${IMAGE_BASE_URL}${num}.webp" 
+                 alt="${imgData.alt}" 
+                 title="${imgData.title}" 
+                 loading="lazy">
+            <div class="card-info">
+                <p class="card-title">${imgData.title}</p>
+            </div>
+        `;
+    
     
     galleryGrid.appendChild(card);
 });
